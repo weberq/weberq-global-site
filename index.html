@@ -104,6 +104,37 @@
       .sub{opacity:.8;margin:0 0 28px}
       .grid{display:grid;gap:22px}
 
+      /* Tech Stack responsive grid */
+      #solutions .stack {
+        /* auto-fit = wraps nicely without hardcoding 6 columns */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      /* Ultra-small phones: switch to horizontal snap scrolling */
+      @media (max-width: 420px) {
+        #solutions .stack {
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: 82%;
+          overflow-x: auto;
+          overscroll-behavior-x: contain;
+          scroll-snap-type: x mandatory;
+          gap: 16px;
+          padding-bottom: 10px;
+        }
+        #solutions .stack .card {
+          scroll-snap-align: start;
+        }
+
+        /* optional: lighter scrollbar */
+        #solutions .stack::-webkit-scrollbar { height: 8px; }
+        #solutions .stack::-webkit-scrollbar-thumb {
+          background: var(--outline-2);
+          border-radius: 8px;
+        }
+      }
+
+
       /* CARDS */
       .card{position:relative;border:1px solid var(--outline);background:#fff;border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-1);transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s}
       .card:hover{transform:translateY(-6px);box-shadow:0 24px 64px hsl(219 50% 60%/.26)}
@@ -339,7 +370,7 @@
       <div class="container">
         <h2 class="h2">Technology Stack</h2>
         <p class="sub">Battle‑tested tools we love deploying.</p>
-        <div class="grid" style="grid-template-columns:repeat(6,minmax(140px,1fr))">
+        <div class="grid stack">
           <div class="card reveal" title="PLC/SCADA"><div class="hdr"><span class="material-symbols-rounded">memory</span><h4>PLC / SCADA</h4></div><p>Siemens TIA • Allen‑Bradley • Schneider • Ignition</p></div>
           <div class="card reveal" title="Protocols"><div class="hdr"><span class="material-symbols-rounded">hub</span><h4>Protocols</h4></div><p>OPC UA • Modbus • MQTT • REST • gRPC</p></div>
           <div class="card reveal" title="Data"><div class="hdr"><span class="material-symbols-rounded">data_object</span><h4>Data</h4></div><p>Timescale • InfluxDB • Postgres • DuckDB</p></div>
