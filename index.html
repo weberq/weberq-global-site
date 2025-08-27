@@ -351,6 +351,54 @@
         }
       }
 
+      /* Robotics layout */
+      #robotics .robotics-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 22px;
+      }
+      #robotics .robotics-grid .card {
+        grid-column: span 6;
+      }
+      #robotics .robotics-grid .card:last-child {
+        grid-column: span 12;
+      }
+
+      /* Tablet: two-up is fine */
+      @media (max-width: 980px) {
+        #robotics .robotics-grid {
+          grid-template-columns: repeat(12, 1fr);
+        }
+        #robotics .robotics-grid .card {
+          grid-column: span 6;
+        }
+        #robotics .robotics-grid .card:last-child {
+          grid-column: span 12;
+        }
+      }
+
+      /* Phones: stack all cards */
+      @media (max-width: 640px) {
+        #robotics .robotics-grid {
+          grid-template-columns: 1fr;
+        }
+        #robotics .robotics-grid .card {
+          grid-column: auto;
+        }
+      }
+
+      /* Small heading & tighter content so nothing clips on small screens */
+      @media (max-width: 640px) {
+        #robotics .card h3 {
+          font-size: 1.25rem;
+          line-height: 1.3;
+        }
+        #robotics .badge {
+          font-size: 0.78rem;
+          padding: 6px 10px;
+        }
+      }
+
       /* CARDS */
       .card {
         position: relative;
@@ -585,6 +633,38 @@
         max-width: 100%;
         pointer-events: none;
         user-select: none;
+      }
+
+      /* --- Robotics & Humanoids: bullet-proof mobile layout --- */
+
+      /* Base: allow cards to shrink inside grid columns */
+      #robotics .grid > .card {
+        min-width: 0;
+      }
+
+      /* Stack sooner (phones + small tablets) even if inline styles exist */
+      @media (max-width: 860px) {
+        #robotics .grid {
+          grid-template-columns: 1fr !important; /* one column */
+        }
+        #robotics .grid > .card {
+          grid-column: 1 / -1 !important; /* ignore span 6/12 inline */
+        }
+      }
+
+      /* Ultra-small phones: tighten headings so nothing clips */
+      @media (max-width: 420px) {
+        #robotics .card .hdr {
+          flex-wrap: wrap;
+        }
+        #robotics .card h3 {
+          font-size: 1.15rem;
+          line-height: 1.25;
+        }
+        #robotics .badge {
+          font-size: 0.78rem;
+          padding: 6px 10px;
+        }
       }
     </style>
   </head>
@@ -866,8 +946,8 @@
           From desktop pick‑and‑place to heavy payload arms — and AI‑driven
           humanoids for service and industrial tasks.
         </p>
-        <div class="grid" style="grid-template-columns: repeat(12, 1fr)">
-          <article class="card reveal" style="grid-column: span 6">
+        <div class="grid robotics-grid">
+          <article class="card reveal">
             <div class="hdr">
               <span class="badge">Robotic Arms</span>
               <h3>Mini, Mid & Heavy‑Duty</h3>
@@ -886,7 +966,7 @@
               </svg>
             </div>
           </article>
-          <article class="card reveal" style="grid-column: span 6">
+          <article class="card reveal">
             <div class="hdr">
               <span class="badge">AI Humanoids</span>
               <h3>Vision, Speech & Dexterity</h3>
@@ -906,7 +986,7 @@
               </svg>
             </div>
           </article>
-          <article class="card reveal" style="grid-column: span 12">
+          <article class="card reveal">
             <div class="hdr">
               <span class="badge">EOAT</span>
               <h3>End‑of‑Arm Tooling (EOAT)</h3>
