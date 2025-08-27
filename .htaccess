@@ -1,0 +1,20 @@
+RewriteEngine on
+RewriteEngine on
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+
+RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
+RewriteRule ^ /%1 [NC,L,R]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [NC,L]
+
+ErrorDocument 400 https://weber.cottonseeds.org/this-is-bad-request.html
+ErrorDocument 401 https://weber.cottonseeds.org/this-is-client-error.html
+ErrorDocument 403 https://weber.cottonseeds.org/this-is-forbidden.html
+ErrorDocument 404 https://weber.cottonseeds.org/this-url-doesnt-exist.html
+ErrorDocument 500 https://weber.cottonseeds.org/this-is-internal-server-error.html
