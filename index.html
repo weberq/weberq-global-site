@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WeberQ Global Private Limited — Quantum‑grade Industrial Tech</title>
+    <meta name="description" content="WeberQ Global Pvt Ltd builds custom dashboards, robotic arms, humanoid robots, industrial tools, factory automation and IoT devices. Quantum‑grade engineering that upgrades your plant to Industry 4.0 and beyond." />
+    <meta name="theme-color" content="#0f66d6" />
+    
+    <meta property="og:title" content="WeberQ Global Private Limited" />
+    <meta property="og:description" content="Quantum-grade industrial tech: Custom dashboards, automation, robotics, and more. Upgrade your plant to Industry 4.0 and beyond." />
+    <meta property="og:image" content="https://weberq.global/weberq-og.jpg" />
+    <meta property="og:url" content="https://weberq.global/" />
+    <meta property="og:type" content="website" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "WeberQ Global Private Limited",
+      "image": "https://weberq.global/logo.png",
+      "url": "https://weberq.global/",
+      "telephone": "+91-9876543210",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "C/o Pranay Kiran, Cottonseeds.org",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "addressCountry": "IN"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/weberq-global",
+        "https://twitter.com/cottonseedsorg"
+      ],
+      "brand": {
+          "@type": "Brand",
+          "name": "WeberQ",
+          "logo": "https://weberq.global/logo.png"
+      },
+      "knowsAbout": ["Robotics", "Industrial Automation", "IoT", "Data Dashboards", "AI"]
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300..700" rel="stylesheet" />
+    <style>
+      :root{
+        /* Light palette from your logo */
+        --q50:#f4f9ff; --q100:#e8f2ff; --q200:#cfe6ff; --q300:#a8d1ff; --q400:#7fbdff; --q500:#2e8cff; --q600:#1976e7; --q700:#0f66d6; --q800:#0b55b2; --q900:#083d82;
+        --bg:#ffffff;
+        --on-bg:#0b1a33;
+        --surface:#ffffff; --surface-alt:#f6f9fe;
+        --outline:#d8e3f6; --outline-2:#c8d6ee;
+        --primary:var(--q700); --primary-variant:var(--q500);
+        --gradient:linear-gradient(135deg,var(--q500) 0%, var(--q700) 100%);
+        --radius-xl:22px; --radius-lg:16px; --radius-md:12px; --radius-sm:10px;
+        --shadow-1:0 6px 18px hsl(220 30% 50%/.16), inset 0 1px 0 hsl(210 90% 90%/.3);
+        --shadow-2:0 24px 48px hsl(220 50% 55%/.22);
+      }
+      *{box-sizing:border-box}
+      html,body{margin:0;background:var(--bg);color:var(--on-bg);font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",sans-serif;scroll-behavior:smooth}
+      a{color:inherit;text-decoration:none}
+      img{max-width:100%;height:auto;display:block}
+      .container{max-width:1180px;margin:0 auto;padding:0 20px}
+
+      /* NAV */
+      .nav{position:sticky;top:0;z-index:60;background:#ffffffd9;backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--outline)}
+      .nav .container{display:flex;align-items:center;gap:14px;padding:12px 20px}
+      .brand{display:flex;align-items:center;gap:12px}
+      .brand img{width:40px;height:40px}
+      .brand .title{font-family:"Space Grotesk";font-weight:800;letter-spacing:.2px;color:var(--primary)}
+      .brand small{display:block;font-weight:600;opacity:.7;margin-top:-4px;font-size:.72rem}
+      .navlinks{margin-left:auto;display:flex;gap:10px;align-items:center}
+      .chip{padding:10px 14px;border-radius:999px;border:1px solid var(--outline);transition:.25s background,.25s transform;background:#fff}
+      .chip:hover{background:var(--surface-alt);transform:translateY(-2px)}
+      .cta{padding:10px 16px;border-radius:999px;background:var(--gradient);color:#fff;box-shadow:var(--shadow-1);font-weight:700}
+      .menu-btn{display:none;margin-left:auto;background:#fff;border:1px solid var(--outline);border-radius:12px;padding:8px 10px}
+
+      /* HERO */
+      .hero{background:linear-gradient(180deg,var(--q50),#fff)}
+      .hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:88px 20px 72px}
+      .eyebrow{color:var(--q600);text-transform:uppercase;letter-spacing:.22em;font-weight:800;font-size:.8rem}
+      .hero h1{font-family:"Space Grotesk";font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;margin:.4rem 0 .8rem}
+      .hero p{font-size:1.08rem;opacity:.9}
+      .actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+      .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid var(--outline);background:#fff;box-shadow:var(--shadow-1);font-weight:700}
+      .btn.primary{background:var(--gradient);color:#fff;border:none}
+      .btn .icon{font-family:"Material Symbols Rounded";font-variation-settings:"FILL" 1, "wght" 600, "GRAD" 0, "opsz" 28}
+
+      .hero-visual{position:relative;min-height:420px;border-radius:var(--radius-xl);background:radial-gradient(650px 300px at 70% 0%, hsl(214 100% 64%/.12), transparent 60%),linear-gradient(180deg, #ffffff, #f3f7ff);border:1px solid var(--outline);box-shadow:var(--shadow-2)}
+      .hero-visual canvas{position:absolute;inset:0;width:100%;height:100%}
+      .orbit{position:absolute;inset:0;pointer-events:none}
+
+      /* STRIP */
+      .strip{padding:20px 0;border-top:1px solid var(--outline);border-bottom:1px solid var(--outline);background:linear-gradient(90deg,#fbfdff,#f5f9ff)}
+      .strip .logos{display:flex;gap:40px;opacity:.8;flex-wrap:wrap;align-items:center;justify-content:center}
+      .logos img{height:28px;filter:grayscale(1) contrast(1.1) brightness(.4);opacity:.9}
+
+      /* SECTION GENERIC */
+      section{padding:74px 0}
+      .h2{font-family:"Space Grotesk";font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 10px}
+      .sub{opacity:.8;margin:0 0 28px}
+      .grid{display:grid;gap:22px}
+
+      /* CARDS */
+      .card{position:relative;border:1px solid var(--outline);background:#fff;border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-1);transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s}
+      .card:hover{transform:translateY(-6px);box-shadow:0 24px 64px hsl(219 50% 60%/.26)}
+      .card .hdr{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+      .badge{font-size:.8rem;font-weight:800;color:white;background:linear-gradient(135deg,var(--q400),var(--q700));padding:6px 10px;border-radius:999px}
+      .card p{opacity:.9;line-height:1.6}
+      .illus{height:130px;background:radial-gradient(60% 60% at 50% 35%, hsl(210 100% 70%/.12), transparent 60%);border-radius:14px;display:flex;align-items:center;justify-content:center}
+
+      /* FEATURE GRID */
+      .features{grid-template-columns:repeat(12,1fr)}
+      .features .card{grid-column:span 4;min-height:250px}
+      .features .card.wide{grid-column:span 8}
+      .features .card.tall{min-height:320px}
+
+      /* CASES */
+      .cases{grid-template-columns:repeat(12,1fr)}
+      .case{grid-column:span 6;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+      .case .shot{border-radius:var(--radius-md);border:1px solid var(--outline-2);overflow:hidden}
+      
+      /* CTA */
+      .cta-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;border-radius:var(--radius-xl);padding:28px;border:1px solid var(--outline);background:#fff;box-shadow:var(--shadow-2)}
+      .field{width:100%;padding:12px 14px;border:1px solid var(--outline);border-radius:12px;background:#fff}
+
+      /* FOOTER */
+      footer{padding:40px 0;border-top:1px solid var(--outline);background:#fff;color:#23324b}
+      .footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+      .muted{opacity:.75}
+
+      /* Responsive */
+      @media (max-width:980px){
+        .navlinks{display:none}
+        .menu-btn{display:inline-flex}
+        .hero .container, .cta-panel{grid-template-columns:1fr}
+        .features .card{grid-column:span 6}
+        .features .card.wide{grid-column:span 12}
+        .case{grid-template-columns:1fr;grid-column:span 12}
+      }
+      @media (max-width:640px){
+        .hero .container{padding:56px 16px}
+        .features .card{grid-column:span 12}
+        .logos img{height:22px}
+        .cta-panel{padding:18px}
+        .btn{width:100%;justify-content:center}
+        .case .shot{order:-1}
+      }
+
+      /* Mobile menu sheet */
+      .sheet{position:fixed;inset:0 0 auto 0;height:0;background:#fff;border-bottom:1px solid var(--outline);box-shadow:var(--shadow-2);overflow:hidden;z-index:55;transition:height .3s ease-in-out}
+      .sheet.open{height:auto}
+      .sheet .links{display:grid;gap:10px;padding:16px}
+      .sheet a{padding:12px 14px;border:1px solid var(--outline);border-radius:12px;background:#fff}
+
+      /* Reveal */
+      .reveal{opacity:0;transform:translateY(16px)}
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <a class="brand" href="#top" aria-label="WeberQ home" title="WeberQ Global">
+          <img src="/mnt/data/logo.png" alt="WeberQ Global logo" />
+          <div>
+            <div class="title">WeberQ Global Pvt Ltd</div>
+            <small>Quantum‑grade Industrial Solutions</small>
+          </div>
+        </a>
+        <div class="navlinks">
+          <a class="chip" href="#services">Services</a>
+          <a class="chip" href="#robotics">Robotics</a>
+          <a class="chip" href="#solutions">Tech Stack</a>
+          <a class="chip" href="#cases">Case Studies</a>
+          <a class="chip" href="#contact">Contact</a>
+          <a class="cta" href="#contact">Upgrade my plant →</a>
+        </div>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span class="material-symbols-rounded">menu</span></button>
+      </div>
+    </nav>
+    <div class="sheet" id="sheet" aria-hidden="true">
+      <div class="links container">
+        <a href="#services">Services</a>
+        <a href="#robotics">Robotics</a>
+        <a href="#solutions">Tech Stack</a>
+        <a href="#cases">Case Studies</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" style="display:inline-block;text-align:center" href="#contact">Upgrade my plant →</a>
+      </div>
+    </div>
+
+    <header id="top" class="hero" role="banner">
+      <div class="container">
+        <div>
+          <div class="eyebrow">Rebrand • New era</div>
+          <h1>Custom Dashboards, Robotic Arms & Humanoids — delivered with <span style="background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent">Quantum confidence</span>.</h1>
+          <p>We build dashboards, industrial tools, IoT devices and automation to empower factories of any size. Our light, professional UI and edge‑to‑cloud engineering create clarity and measurable ROI.</p>
+          <div class="actions">
+            <a class="btn primary" href="#services"><span class="icon">rocket_launch</span> Explore services</a>
+            <a class="btn" href="#robotics"><span class="icon">android</span> See robotics</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <canvas id="mesh"></canvas>
+          <svg class="orbit" viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity=".9">
+              <path d="M40 210c0-110 90-200 200-200s200 90 200 200-90 200-200 200S40 320 40 210Z" stroke="url(#g1)" stroke-width="1.2"/>
+              <path d="M100 210c0-77 63-140 140-140s140 63 140 140-63 140-140 140S100 287 100 210Z" stroke="url(#g2)" stroke-width="1.2"/>
+              <circle cx="340" cy="140" r="5" fill="url(#g3)">
+                <animate attributeName="cy" values="140;130;140" dur="6s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="200" cy="300" r="4" fill="url(#g3)">
+                <animate attributeName="cx" values="200;220;200" dur="7s" repeatCount="indefinite" />
+              </circle>
+            </g>
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="600" y2="420"><stop stop-color="var(--q400)"/><stop offset="1" stop-color="var(--q700)"/></linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="600" y2="420"><stop stop-color="var(--q300)"/><stop offset="1" stop-color="var(--q600)"/></linearGradient>
+              <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--q300)"/><stop offset="1" stop-color="var(--q700)"/></linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <div class="strip" aria-label="trusted by">
+      <div class="container logos">
+        <img src="https://img.icons8.com/?size=100&id=7c8S2u8d5YkU&format=png&color=000000" alt="Icon for Industry 4.0" />
+        <img src="https://img.icons8.com/?size=100&id=38514&format=png&color=000000" alt="Icon for PLC automation" />
+        <img src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000" alt="Icon for Cloud computing" />
+        <img src="https://img.icons8.com/?size=100&id=111697&format=png&color=000000" alt="Icon for Data dashboards" />
+        <img src="https://img.icons8.com/?size=100&id=8113&format=png&color=000000" alt="Icon for Industrial robotics" />
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="h2">Capabilities</h2>
+        <p class="sub">From sensor to CEO: we design, build and operate the full stack.</p>
+        <div class="grid features">
+          <article class="card tall reveal">
+            <div class="hdr"><span class="badge">Dashboards</span><h3>Operational & Executive Dashboards</h3></div>
+            <p>Material‑3 expressive UI with live KPIs, SPC charts, OEE, energy & utility telemetry. We integrate PLC/SCADA, MES and ERP so decisions are one glance away.</p>
+            <div class="illus" aria-hidden="true">
+              <svg viewBox="0 0 360 120"><rect x="10" y="10" width="340" height="100" rx="12" fill="#f5f8ff" stroke="var(--outline)"/>
+                <polyline points="20,90 70,70 120,86 170,50 220,60 270,30 320,40" fill="none" stroke="url(#g3)" stroke-width="3"/>
+                <circle cx="270" cy="30" r="5" fill="url(#g3)" />
+              </svg>
+            </div>
+          </article>
+          <article class="card tall reveal">
+            <div class="hdr"><span class="badge">Automation</span><h3>Industrial Automation & Robotics</h3></div>
+            <p>Custom tooling, jig/fixture sensors, motion control and safety interlocks. PLC/HMI programming (Siemens, Allen‑Bradley, Schneider) and cobot integrations.</p>
+            <div class="illus" aria-hidden="true">
+              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#g2)" stroke-width="2.4">
+                <rect x="30" y="24" width="80" height="72" rx="10"/>
+                <rect x="140" y="24" width="80" height="72" rx="10"/>
+                <rect x="250" y="24" width="80" height="72" rx="10"/>
+                <path d="M110 60h30M220 60h30"/></g>
+              </svg>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="hdr"><span class="badge">IoT</span><h3>Edge‑to‑Cloud IoT</h3></div>
+            <p>Design of rugged IoT devices, gateways and telemetry pipelines. Modbus, OPC UA, MQTT, LoRaWAN. Secure cloud dashboards and alerts.</p>
+            <div class="illus" aria-hidden>
+              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#g1)" stroke-width="2.6">
+                <circle cx="60" cy="60" r="24"/>
+                <circle cx="180" cy="60" r="24"/>
+                <circle cx="300" cy="60" r="24"/>
+                <path d="M84 60h72M204 60h72"/></g></svg>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="hdr"><span class="badge">Tools</span><h3>Custom Industrial Tools</h3></div>
+            <p>Precision torque tools, inspection rigs, leakage & dew‑point monitoring, battery test automation and more — built for your shopfloor realities.</p>
+            <div class="illus" aria-hidden>
+              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#g2)" stroke-width="2.6">
+                <path d="M80 70l40-40 40 40-40 40-40-40z"/>
+                <circle cx="240" cy="60" r="34"/>
+              </g></svg>
+            </div>
+          </article>
+          <article class="card wide reveal">
+            <div class="hdr"><span class="badge">Consulting</span><h3>Plant Digitalization & Data Strategy</h3></div>
+            <p>Roadmaps from isolated machines to a connected enterprise: BOM traceability, quality data lakes, predictive maintenance and cybersecurity posture. We meet you where you are.</p>
+            <div class="illus" aria-hidden>
+              <svg viewBox="0 0 560 120"><g fill="none" stroke="url(#g1)" stroke-width="2.4">
+                <rect x="14" y="16" width="130" height="88" rx="12"/>
+                <rect x="214" y="16" width="130" height="88" rx="12"/>
+                <rect x="414" y="16" width="130" height="88" rx="12"/>
+                <path d="M144 60h70M344 60h70"/></g></svg>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="robotics">
+      <div class="container">
+        <h2 class="h2">Robotics & Humanoids</h2>
+        <p class="sub">From desktop pick‑and‑place to heavy payload arms — and AI‑driven humanoids for service and industrial tasks.</p>
+        <div class="grid" style="grid-template-columns:repeat(12,1fr)">
+          <article class="card reveal" style="grid-column:span 6">
+            <div class="hdr"><span class="badge">Robotic Arms</span><h3>Mini, Mid & Heavy‑Duty</h3></div>
+            <p>Customizable DOF, reach, payload and accuracy. Options for single‑cup micro‑suction EOAT, force‑torque sensing, and vision‑guided pick‑place. Safety‑rated motion with PLC/HMI or ROS2 control.</p>
+            <div class="illus" aria-hidden="true">
+              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#g2)" stroke-width="3"><path d="M60 90h80l20-20 40-40 20 20-40 40h80"/></g></svg>
+            </div>
+          </article>
+          <article class="card reveal" style="grid-column:span 6">
+            <div class="hdr"><span class="badge">AI Humanoids</span><h3>Vision, Speech & Dexterity</h3></div>
+            <p>Edge AI perception, SLAM navigation and natural‑language tasking. Modular hands and compliant actuation for safe human‑robot collaboration.</p>
+            <div class="illus" aria-hidden="true">
+              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#g1)" stroke-width="2.6"><circle cx="90" cy="60" r="28"/><rect x="140" y="30" width="60" height="60" rx="12"/><path d="M210 40h60M210 80h60"/></g></svg>
+            </div>
+          </article>
+          <article class="card reveal" style="grid-column:span 12">
+            <div class="hdr"><span class="badge">EOAT</span><h3>End‑of‑Arm Tooling (EOAT)</h3></div>
+            <p>Single‑cup micro‑suction, soft grippers, electric/servo grippers, screw‑driving, weld torches and applicators. Designed for quick‑swap on your existing arms.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="container">
+        <h2 class="h2">Technology Stack</h2>
+        <p class="sub">Battle‑tested tools we love deploying.</p>
+        <div class="grid" style="grid-template-columns:repeat(6,minmax(140px,1fr))">
+          <div class="card reveal" title="PLC/SCADA"><div class="hdr"><span class="material-symbols-rounded">memory</span><h4>PLC / SCADA</h4></div><p>Siemens TIA • Allen‑Bradley • Schneider • Ignition</p></div>
+          <div class="card reveal" title="Protocols"><div class="hdr"><span class="material-symbols-rounded">hub</span><h4>Protocols</h4></div><p>OPC UA • Modbus • MQTT • REST • gRPC</p></div>
+          <div class="card reveal" title="Data"><div class="hdr"><span class="material-symbols-rounded">data_object</span><h4>Data</h4></div><p>Timescale • InfluxDB • Postgres • DuckDB</p></div>
+          <div class="card reveal" title="Edge & Cloud"><div class="hdr"><span class="material-symbols-rounded">cloud</span><h4>Edge & Cloud</h4></div><p>Raspberry Pi/CM4 • ESP32 • Azure • AWS • GCP</p></div>
+          <div class="card reveal" title="Dashboards"><div class="hdr"><span class="material-symbols-rounded">monitoring</span><h4>Dashboards</h4></div><p>Flutter • React • Grafana • Svelte • Material‑3</p></div>
+          <div class="card reveal" title="AI / Vision"><div class="hdr"><span class="material-symbols-rounded">auto_awesome</span><h4>AI / Vision</h4></div><p>OpenCV • ONNX • YOLO • Semantic search</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <h2 class="h2">Selected Work</h2>
+        <p class="sub">A glimpse of upgrades we have delivered recently.</p>
+        <div class="grid cases">
+          <article class="card case reveal">
+            <div>
+              <h3>Battery Manufacturing — OEE & Traceability</h3>
+              <p>Unified historian for furnaces, gloveboxes and assembly lines; SPC alerts dropped rework by <strong>22%</strong> within the first quarter.</p>
+              <a class="btn" href="#contact"><span class="material-symbols-rounded">call_made</span> Discuss similar</a>
+            </div>
+            <div class="shot"><img alt="Dashboard for battery manufacturing" src="https://images.unsplash.com/photo-1551281044-8b89a39f57b6?q=80&w=1200&auto=format&fit=crop"/></div>
+          </article>
+          <article class="card case reveal">
+            <div>
+              <h3>Utilities IoT — Energy & Air Quality</h3>
+              <p>Low‑power edge devices for dew‑point, helium leak, energy meters and compressors. Saved ~<strong>18%</strong> energy through demand‑response.</p>
+              <a class="btn" href="#contact"><span class="material-symbols-rounded">call_made</span> Explore approach</a>
+            </div>
+            <div class="shot"><img alt="IoT devices for utilities and energy monitoring" src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop"/></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta-panel">
+          <div>
+            <h2 class="h2">Let’s upgrade your plant</h2>
+            <p class="sub">Tell us your bottleneck — we’ll propose a phased roadmap with clear ROI within 3–6 weeks.</p>
+            <ul class="muted" style="line-height:1.9;margin:0 0 10px 0;padding-left:18px">
+              <li>Discovery → Pilot → Scale plan</li>
+              <li>On‑prem or cloud, your choice</li>
+              <li>Compliance: ISO, MIL/AS9100 workflows</li>
+            </ul>
+          </div>
+          <form class="card" style="padding:18px" onsubmit="event.preventDefault(); alert('Thanks! We\'ll get back within 24 hours.'); this.reset();">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+              <input required name="name" placeholder="Name*" class="field" />
+              <input required type="email" name="email" placeholder="Email*" class="field"/>
+              <input name="company" placeholder="Company" class="field"/>
+              <select class="field"><option>Topic</option><option>Dashboards</option><option>Automation</option><option>IoT</option><option>Robotics</option><option>Consulting</option></select>
+              <textarea required class="field" style="grid-column:1/-1" rows="4" placeholder="What would you like to achieve?"></textarea>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:12px;align-items:center;justify-content:space-between">
+              <button class="btn primary" type="submit"><span class="material-symbols-rounded">send</span> Request proposal</button>
+              <span class="muted" style="font-size:.86rem">Or email: <a href="mailto:hello@weberq.global">hello@weberq.global</a></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container footgrid">
+        <div>
+          <div class="brand"><img src="/mnt/data/logo.png" alt="WeberQ logo small"/><div><div class="title">WeberQ</div><small>Global Private Limited</small></div></div>
+          <p class="muted">© <span id="y"></span> WeberQ Global Pvt Ltd. All rights reserved.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <p class="muted"><a href="#services">Services</a><br><a href="#solutions">Technology</a><br><a href="#cases">Case Studies</a></p>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <p class="muted"><a href="https://weber.cottonseeds.org/">Legacy site</a><br><a href="mailto:hello@weberq.global">hello@weberq.global</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Year
+      document.getElementById('y').textContent = new Date().getFullYear();
+
+      // Mobile menu toggle
+      const btn = document.getElementById('menuBtn');
+      const sheet = document.getElementById('sheet');
+      btn?.addEventListener('click', ()=>{
+        const open = sheet.classList.toggle('open');
+        sheet.setAttribute('aria-hidden', String(!open));
+        btn.innerHTML = `<span class="material-symbols-rounded">${open?'close':'menu'}</span>`
+      });
+      sheet.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+        sheet.classList.remove('open');
+        sheet.setAttribute('aria-hidden','true');
+        btn.innerHTML = '<span class="material-symbols-rounded">menu</span>'
+      }));
+
+      // Scroll-reveal animation
+      const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ e.target.animate([
+            {opacity:0, transform:'translateY(18px)'},
+            {opacity:1, transform:'translateY(0)'}
+          ],{duration:650,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'}); observer.unobserve(e.target); }
+        })
+      },{threshold:.2});
+      document.querySelectorAll('.reveal, .card, section .h2, section .sub, .hero .actions .btn').forEach(el=>observer.observe(el));
+
+      // Subtle animated mesh background for the hero card
+      const c = document.getElementById('mesh');
+      const ctx = c.getContext('2d');
+      let w, h; const DPR = Math.max(1, window.devicePixelRatio || 1);
+      const nodes = Array.from({length: 36}).map(()=>({x:Math.random(), y:Math.random(), vx:(Math.random()-.5)/300, vy:(Math.random()-.5)/300}))
+      function resize(){ const r = c.getBoundingClientRect(); w=r.width; h=r.height; c.width=w*DPR; c.height=h*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);} resize();
+      window.addEventListener('resize', resize);
+      (function loop(){ ctx.clearRect(0,0,w,h); ctx.fillStyle='rgba(12,30,60,.06)'; ctx.fillRect(0,0,w,h);
+        for(const n of nodes){ n.x += n.vx; n.y += n.vy; if(n.x<0||n.x>1) n.vx*=-1; if(n.y<0||n.y>1) n.vy*=-1; }
+        for(let i=0;i<nodes.length;i++){
+          for(let j=i+1;j<nodes.length;j++){
+            const a = nodes[i], b = nodes[j];
+            const dx = (a.x-b.x)*w, dy=(a.y-b.y)*h, d=Math.hypot(dx,dy);
+            if(d<160){ ctx.strokeStyle=`rgba(40,120,240,${(1-d/160)*.18})`; ctx.beginPath(); ctx.moveTo(a.x*w, a.y*h); ctx.lineTo(b.x*w, b.y*h); ctx.stroke(); }
+          }
+        }
+        for(const n of nodes){ ctx.beginPath(); ctx.arc(n.x*w, n.y*h, 2.2, 0, Math.PI*2); ctx.fillStyle='rgba(20,110,240,.7)'; ctx.fill(); }
+        requestAnimationFrame(loop);
+      })();
+    </script>
+  </body>
+</html>
