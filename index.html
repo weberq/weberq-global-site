@@ -1,545 +1,508 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="https://schema.org/LocalBusiness">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WeberQ Global Private Limited — Quantum-grade Industrial Tech</title>
-    <meta name="description" content="WeberQ Global Pvt Ltd builds custom dashboards, robotic arms, industrial tools, automation cells and IoT devices. Quantum-grade engineering for real-world factories." />
+    <title>WeberQ Global | PCB Design, Enclosure Design and Software, Hyderabad</title>
+    <meta name="description" content="WeberQ Global Private Limited designs custom PCBs for inverters, BMS and control electronics, product enclosures, and dashboards, apps and software. Makers of Musa CAD. Based in Hyderabad, India." />
     <meta name="theme-color" content="#0f66d6" />
+    <link rel="canonical" href="https://weberq.in/" />
+    <link rel="icon" type="image/png" sizes="48x48" href="assets/icons/favicon-48.png" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
 
-    <meta property="og:title" content="WeberQ Global Private Limited" />
-    <meta property="og:description" content="Custom dashboards, robotic arms, IoT devices and automation cells. Upgrade your plant with pragmatic engineering." />
-    <meta property="og:image" content="https://weberq.global/weberq-og.jpg" />
-    <meta property="og:url" content="https://weberq.global/" />
+    <meta property="og:title" content="WeberQ Global | PCB, enclosure and software engineering" />
+    <meta property="og:description" content="Custom PCBs for inverters and BMS, the enclosures around them, and the software that runs them. Makers of Musa CAD." />
+    <meta property="og:image" content="https://weberq.in/assets/icons/og.png" />
+    <meta property="og:url" content="https://weberq.in/" />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
+        "@type": "Organization",
         "name": "WeberQ Global Private Limited",
-        "image": "https://weberq.global/logo.png",
-        "url": "https://weberq.global/",
-        "telephone": "+91-9876543210",
+        "alternateName": "WeberQ",
+        "url": "https://weberq.in/",
+        "logo": "https://weberq.in/assets/logo.png",
+        "email": "samachar@weberq.in",
+        "taxID": "36AAECW0738N1ZX",
+        "identifier": "U62012TS2025PTC196050",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "C/o Pranay Kiran, Cottonseeds.org",
           "addressLocality": "Hyderabad",
           "addressRegion": "Telangana",
           "addressCountry": "IN"
         },
-        "sameAs": [
-          "https://www.linkedin.com/company/weberq-global",
-          "https://twitter.com/cottonseedsorg"
-        ],
-        "brand": {
-          "@type": "Brand",
-          "name": "WeberQ",
-          "logo": "https://weberq.global/logo.png"
-        },
-        "knowsAbout": ["Robotic Arms", "IoT Devices", "Automation Cells", "Custom Dashboards", "Embedded Engineering"]
+        "sameAs": ["https://github.com/weberq"],
+        "knowsAbout": ["PCB design", "Inverter design", "Battery management systems", "Enclosure design", "Mechanical design", "Financial dashboards", "Web and mobile software"]
       }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@300..700" rel="stylesheet" />
-
-    <style>
-      :root{
-        --q50:#f4f9ff; --q100:#e8f2ff; --q200:#cfe6ff; --q300:#a8d1ff; --q400:#7fbdff; --q500:#2e8cff; --q600:#1976e7; --q700:#0f66d6; --q800:#0b55b2; --q900:#083d82;
-        --bg:#ffffff; --on-bg:#0b1a33; --surface:#ffffff; --surface-alt:#f6f9fe; --outline:#d8e3f6; --outline-2:#c8d6ee;
-        --primary:var(--q700); --primary-variant:var(--q500);
-        --gradient:linear-gradient(135deg,var(--q500) 0%, var(--q700) 100%);
-        --radius-xl:22px; --radius-lg:16px; --radius-md:12px; --radius-sm:10px;
-        --shadow-1:0 6px 18px hsl(220 30% 50%/.16), inset 0 1px 0 hsl(210 90% 90%/.3);
-        --shadow-2:0 24px 48px hsl(220 50% 55%/.22);
-        --navH:56px;
-      }
-      *{box-sizing:border-box}
-      html,body{margin:0;background:var(--bg);color:var(--on-bg);font-family:Manrope,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",sans-serif;scroll-behavior:smooth}
-      a{color:inherit;text-decoration:none}
-      img{max-width:100%;height:auto;display:block}
-      .container{max-width:1180px;margin:0 auto;padding:0 20px}
-
-      /* NAV */
-      .nav{position:sticky;top:0;z-index:70;background:#ffffffd9;backdrop-filter:saturate(140%) blur(2px);border-bottom:1px solid var(--outline)}
-      .nav .container{display:flex;align-items:center;gap:14px;padding:12px 20px}
-      .brand{display:flex;align-items:center;gap:12px}
-      .brand img{width:40px;height:40px}
-      .brand .title{font-family:"Space Grotesk";font-weight:800;letter-spacing:.2px;color:var(--primary)}
-      .brand small{display:block;font-weight:600;opacity:.7;margin-top:-4px;font-size:.72rem}
-      .navlinks{margin-left:auto;display:flex;gap:10px;align-items:center}
-      .chip{padding:10px 14px;border-radius:999px;border:1px solid var(--outline);transition:.25s background,.25s transform;background:#fff}
-      .chip:hover{background:var(--surface-alt);transform:translateY(-2px)}
-      .cta{padding:10px 16px;border-radius:999px;background:var(--gradient);color:#fff;box-shadow:var(--shadow-1);font-weight:700}
-      .menu-btn{display:none;margin-left:auto;background:#fff;border:1px solid var(--outline);border-radius:12px;padding:8px 10px}
-
-      /* HERO */
-      .hero{background:linear-gradient(180deg,var(--q50),#fff)}
-      .hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center;padding:88px 20px 72px}
-      .eyebrow{color:var(--q600);text-transform:uppercase;letter-spacing:.22em;font-weight:800;font-size:.8rem}
-      .hero h1{font-family:"Space Grotesk";font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;margin:.4rem 0 .8rem}
-      .hero p{font-size:1.08rem;opacity:.9}
-      .actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
-      .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:14px;border:1px solid var(--outline);background:#fff;box-shadow:var(--shadow-1);font-weight:700}
-      .btn.primary{background:var(--gradient);color:#fff;border:none}
-      .btn .icon{font-family:"Material Symbols Rounded";font-variation-settings:"FILL" 1, "wght" 600, "GRAD" 0, "opsz" 28}
-
-      .hero-visual{position:relative;min-height:420px;border-radius:var(--radius-xl);background:radial-gradient(650px 300px at 70% 0%, hsl(214 100% 64%/.12), transparent 60%),linear-gradient(180deg, #ffffff, #f3f7ff);border:1px solid var(--outline);box-shadow:var(--shadow-2)}
-      .hero-visual canvas{position:absolute;inset:0;width:100%;height:100%}
-      .orbit{position:absolute;inset:0;pointer-events:none}
-
-      @media (min-width:768px){ .hero-img{ height:125%; } }
-
-      /* STRIP */
-      .strip{padding:20px 0;border-top:1px solid var(--outline);border-bottom:1px solid var(--outline);background:linear-gradient(90deg,#fbfdff,#f5f9ff)}
-      .strip .logos{display:flex;gap:40px;opacity:.8;flex-wrap:wrap;align-items:center;justify-content:center}
-      .logos img{height:28px;filter:grayscale(1) contrast(1.1) brightness(.4);opacity:.9}
-
-      /* SECTION GENERIC */
-      section{padding:74px 0}
-      .h2{font-family:"Space Grotesk";font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 10px}
-      .sub{opacity:.8;margin:0 0 28px}
-      .grid{display:grid;gap:22px}
-
-      /* Tech Stack responsive grid */
-      #solutions .stack{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-      @media (max-width:420px){
-        #solutions .stack{ display:grid; grid-auto-flow:column; grid-auto-columns:82%; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; gap:16px; padding-bottom:10px }
-        #solutions .stack .card{ scroll-snap-align:start }
-        #solutions .stack::-webkit-scrollbar{ height:8px } 
-        #solutions .stack::-webkit-scrollbar-thumb{ background:var(--outline-2); border-radius:8px }
-      }
-
-      /* Robotics layout */
-      #robotics .robotics-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:22px }
-      #robotics .robotics-grid .card{ grid-column:span 6 }
-      #robotics .robotics-grid .card:last-child{ grid-column:span 12 }
-      @media (max-width:980px){
-        #robotics .robotics-grid .card{ grid-column:span 6 }
-        #robotics .robotics-grid .card:last-child{ grid-column:span 12 }
-      }
-      @media (max-width:640px){
-        #robotics .robotics-grid{ grid-template-columns:1fr }
-        #robotics .robotics-grid .card{ grid-column:auto }
-      }
-      @media (max-width:640px){
-        #robotics .card h3{ font-size:1.25rem; line-height:1.3 }
-        #robotics .badge{ font-size:.78rem; padding:6px 10px }
-      }
-
-      /* CARDS */
-      .card{position:relative;border:1px solid var(--outline);background:#fff;border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow-1);transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s}
-      .card:hover{transform:translateY(-6px);box-shadow:0 24px 64px hsl(219 50% 60%/.26)}
-      .card .hdr{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-      .badge{font-size:.8rem;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--q400),var(--q700));padding:6px 10px;border-radius:999px}
-      .card p{opacity:.9;line-height:1.6}
-      .illus{height:130px;background:radial-gradient(60% 60% at 50% 35%, hsl(210 100% 70%/.12), transparent 60%);border-radius:14px;display:flex;align-items:center;justify-content:center}
-
-      /* FEATURE GRID */
-      .features{grid-template-columns:repeat(12,1fr)}
-      .features .card{grid-column:span 4;min-height:250px}
-      .features .card.wide{grid-column:span 8}
-      .features .card.tall{min-height:320px}
-
-      /* CASES */
-      .cases{grid-template-columns:repeat(12,1fr)}
-      .case{grid-column:span 6;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
-      .case .shot{border-radius:var(--radius-md);border:1px solid var(--outline-2);overflow:hidden}
-
-      /* CTA */
-      .cta-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;border-radius:var(--radius-xl);padding:28px;border:1px solid var(--outline);background:#fff;box-shadow:var(--shadow-2)}
-      .field{width:100%;padding:12px 14px;border:1px solid var(--outline);border-radius:12px;background:#fff}
-
-      /* FOOTER */
-      footer{padding:40px 0;border-top:1px solid var(--outline);background:#fff;color:#23324b}
-      .footgrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
-      .muted{opacity:.75}
-
-      /* Responsive */
-      @media (max-width:980px){
-        .navlinks{display:none}
-        .menu-btn{display:inline-flex}
-        .hero .container, .cta-panel{grid-template-columns:1fr}
-        .features .card{grid-column:span 6}
-        .features .card.wide{grid-column:span 12}
-        .case{grid-template-columns:1fr;grid-column:span 12}
-      }
-      @media (max-width:640px){
-        .hero .container{padding:56px 16px}
-        .features .card{grid-column:span 12}
-        .logos img{height:22px}
-        .cta-panel{padding:18px}
-        .btn{width:100%;justify-content:center}
-        .case .shot{order:-1}
-        .card{padding:18px}
-      }
-
-      /* Mobile menu sheet (below sticky header) */
-      .sheet{position:fixed;top:calc(var(--navH) + env(safe-area-inset-top));left:0;right:0;height:0;background:#fff;border-bottom:1px solid var(--outline);box-shadow:var(--shadow-2);overflow:hidden;z-index:80;transition:height .28s ease}
-      .sheet.open{height:calc(100dvh - var(--navH) - env(safe-area-inset-top))}
-      .sheet .links{display:grid;gap:10px;padding:16px;position:relative;z-index:1}
-      .sheet a{padding:12px 14px;border:1px solid var(--outline);border-radius:12px;background:#fff}
-      .sheet a.cta{background:var(--gradient);color:#fff;border:none;text-align:center;font-weight:800;box-shadow:var(--shadow-1)}
-      .sheet::before{content:"";position:fixed;inset:calc(var(--navH) + env(safe-area-inset-top)) 0 0 0;background:rgba(10,20,40,.22);opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:0}
-      .sheet.open::before{opacity:1;pointer-events:auto}
-
-      /* Reveal base */
-      .reveal{opacity:0;transform:translateY(16px)}
-
-      /* Hero image tweak */
-      .hero-img{position:absolute;inset:0;margin:auto;max-height:125%;max-width:100%;pointer-events:none;user-select:none}
-
-      /* Robotics mobile hardening */
-      #robotics .grid > .card{ min-width:0; }
-      @media (max-width:860px){
-        #robotics .grid{ grid-template-columns:1fr !important; }
-        #robotics .grid > .card{ grid-column:1 / -1 !important; }
-      }
-      @media (max-width:420px){
-        #robotics .card .hdr{flex-wrap:wrap}
-        #robotics .card h3{font-size:1.15rem;line-height:1.25}
-        #robotics .badge{font-size:.78rem;padding:6px 10px}
-      }
-    </style>
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/css/site.css" />
   </head>
   <body>
-    <nav class="nav">
-      <div class="container">
-        <a class="brand" href="#top" aria-label="WeberQ home" title="WeberQ Global">
-          <img src="assets/logo.png" alt="WeberQ Global logo" />
-          <div>
-            <div class="title">WeberQ Global Pvt Ltd</div>
-            <small>Quantum-grade Industrial Solutions</small>
-          </div>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <nav class="nav" data-nav aria-label="Main">
+      <div class="wrap nav-row">
+        <a class="brand" href="#top" aria-label="WeberQ home">
+          <img src="assets/icons/logo-96.png" alt="" width="36" height="36" />
+          <span>Weber<b>Q</b></span>
         </a>
-        <div class="navlinks">
-          <a class="chip" href="#services">Services</a>
-          <a class="chip" href="#robotics">Robotics</a>
-          <a class="chip" href="#solutions">Tech Stack</a>
-          <a class="chip" href="#cases">Case Studies</a>
-          <a class="chip" href="#contact">Contact</a>
-          <a class="cta" href="#contact">Upgrade my plant →</a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#board-to-box">How we build</a>
+          <a href="#work">Work</a>
+          <a href="#scope">Start here</a>
         </div>
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span class="material-symbols-rounded">menu</span></button>
+        <a class="btn btn-accent nav-cta" href="#contact">Start a project</a>
+        <button class="nav-toggle" type="button" data-menu aria-expanded="false" aria-controls="sheet" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+      <div class="sheet" id="sheet" data-sheet hidden>
+        <a href="#services">Services</a>
+        <a href="#board-to-box">How we build</a>
+        <a href="#work">Work</a>
+        <a href="#scope">Start here</a>
+        <a class="btn btn-accent" href="#contact">Start a project</a>
       </div>
     </nav>
 
-    <div class="sheet" id="sheet" aria-hidden="true">
-      <div class="links container">
-        <a href="#services">Services</a>
-        <a href="#robotics">Robotics</a>
-        <a href="#solutions">Tech Stack</a>
-        <a href="#cases">Case Studies</a>
-        <a href="#contact">Contact</a>
-        <a class="cta" style="display:inline-block;text-align:center" href="#contact">Upgrade my plant →</a>
-      </div>
-    </div>
+    <main id="main">
+      <header id="top" class="hero">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <h1 class="pill" style="--i:0">
+              <span class="ping" aria-hidden="true"></span>
+              <span>PCB design, enclosure design and software, Hyderabad</span>
+            </h1>
+            <p class="slogan" style="--i:1">The board.<br />The box.<br /><span>The software.</span></p>
+            <p class="lede" style="--i:2">
+              WeberQ designs custom PCBs for inverters, battery management and control
+              electronics, the enclosures around them, and the software that runs them.
+              <em>We released Musa CAD, and we build for the Government of Telangana.</em>
+            </p>
+            <div class="actions" style="--i:3">
+              <a class="btn btn-accent btn-lg" href="#contact">Start a project <span aria-hidden="true">&rarr;</span></a>
+              <a class="btn btn-ghost btn-lg" href="#work">See the work</a>
+            </div>
+          </div>
 
-    <header id="top" class="hero" role="banner">
-      <div class="container">
-        <div>
-          <div class="eyebrow">Rebrand • New era</div>
-          <h1>
-            Custom Dashboards, Robotic Arms & <span style="background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent">IoT Automation</span>.
-          </h1>
-          <p>We build dashboards, industrial tools, IoT devices and automation cells for factories of every size. Our light, professional UI and edge-ready engineering create clarity and measurable ROI.</p>
-          <div class="actions">
-            <a class="btn primary" href="#services"><span class="icon">rocket_launch</span> Explore services</a>
-            <a class="btn" href="#robotics"><span class="icon">precision_manufacturing</span> See robotics</a>
+          <div class="hero-view" style="--i:2">
+            <div class="vp crop" data-vp>
+              <div class="vp-bar">
+                <div class="vp-tabs" role="tablist" aria-label="Demo views">
+                  <button role="tab" type="button" aria-selected="true" aria-controls="pane-board" data-tab="board">board<i>.kicad_pcb</i></button>
+                  <button role="tab" type="button" aria-selected="false" aria-controls="pane-box" data-tab="box">enclosure<i>.step</i></button>
+                  <button role="tab" type="button" aria-selected="false" aria-controls="pane-app" data-tab="app">ledger<i>.app</i></button>
+                </div>
+              </div>
+              <div class="vp-view">
+                <div class="pane is-on" id="pane-board" role="tabpanel" data-pane="board">
+                  <svg data-hero-board viewBox="-44 -38 728 516" role="img" aria-label="A demo circuit board routing itself: copper tracks, vias and components on a blue board."></svg>
+                </div>
+                <div class="pane" id="pane-box" role="tabpanel" data-pane="box" hidden>
+                  <canvas data-hero-box role="img" aria-label="A wireframe electronics enclosure, with its lid lifting off to show the board inside."></canvas>
+                </div>
+                <div class="pane" id="pane-app" role="tabpanel" data-pane="app" hidden>
+                  <div class="dash" data-hero-dash>
+                    <div class="dash-kpis">
+                      <div><small>Balance</small><strong data-kpi="balance">&#8377;4,82,350</strong></div>
+                      <div><small>In, this month</small><strong data-kpi="in">&#8377;1,26,400</strong></div>
+                      <div><small>Out, this month</small><strong data-kpi="out">&#8377;74,180</strong></div>
+                    </div>
+                    <svg class="dash-chart" data-dash-chart viewBox="0 0 480 170" preserveAspectRatio="none" aria-hidden="true">
+                      <path class="dash-area" data-dash-area d="" />
+                      <path class="dash-line" data-dash-line d="" />
+                    </svg>
+                    <div class="dash-foot"><span data-dash-tick>Updated just now</span></div>
+                  </div>
+                </div>
+                <div class="hud" data-hud aria-hidden="true"><i>X</i> <b data-hud-x>80.00</b> <i>Y</i> <b data-hud-y>55.00</b> <i>mm</i></div>
+                <div class="snap" data-snap aria-hidden="true"><s></s><span data-snap-label>Hover a component</span></div>
+              </div>
+              <div class="vp-cmd">
+                <span><i>Command:</i> <b class="caret" data-cmd>ROUTE</b></span>
+                <span class="vp-note" data-vp-note>2 layers shown</span>
+              </div>
+            </div>
+            <p class="dimline" aria-hidden="true"><span>&#9668;</span><i></i><b>Demo, drawn live in your browser. Not a client design.</b><i></i><span>&#9658;</span></p>
           </div>
         </div>
-        <div class="hero-visual" aria-hidden="true">
-          <canvas id="mesh"></canvas>
-          <img src="assets/arm-2-100.png" alt="Robotic Arm visual" class="hero-img" />
-          <svg class="orbit" viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity=".9">
-              <circle cx="340" cy="140" r="5" fill="url(#g3)">
-                <animate attributeName="cy" values="140;130;140" dur="6s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="200" cy="300" r="4" fill="url(#g3)">
-                <animate attributeName="cx" values="200;220;200" dur="7s" repeatCount="indefinite" />
-              </circle>
-            </g>
-            <defs>
-              <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
-                <stop stop-color="var(--q300)"/><stop offset="1" stop-color="var(--q700)"/>
-              </linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
-    </header>
+      </header>
 
-    <div class="strip" aria-label="trusted by">
-      <div class="container logos">
-        <img src="assets/industry-40-64.png" alt="Icon for Industry 4.0" />
-        <img src="https://img.icons8.com/?size=100&id=38514&format=png&color=000000" alt="Icon for Automation" />
-        <img src="https://img.icons8.com/?size=100&id=13441&format=png&color=000000" alt="Icon for Cloud" />
-        <img src="https://img.icons8.com/?size=100&id=111697&format=png&color=000000" alt="Icon for Dashboards" />
-        <img src="https://img.icons8.com/?size=100&id=8113&format=png&color=000000" alt="Icon for Robotics" />
-      </div>
-    </div>
-
-    <section id="services">
-      <div class="container">
-        <h2 class="h2">Capabilities</h2>
-        <p class="sub">From sensor to screen: we design, build and operate the essentials.</p>
-
-        <div class="grid features">
-          <article class="card tall reveal">
-            <div class="hdr"><span class="badge">Dashboards</span><h3>Operational & Executive Dashboards</h3></div>
-            <p>Material-3 UI with live KPIs, production status, quality trends and energy insights. Clean visual language for faster decisions.</p>
-            <div class="illus" aria-hidden="true">
-              <!-- simple chart illustration -->
-              <svg viewBox="0 0 360 120"><rect x="10" y="10" width="340" height="100" rx="12" fill="#f5f8ff" stroke="var(--outline)"/>
-                <polyline points="20,90 70,70 120,86 170,50 220,60 270,30 320,40" fill="none" stroke="url(#grad1)" stroke-width="3"/>
-                <defs><linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--q400)"/><stop offset="1" stop-color="var(--q700)"/></linearGradient></defs>
-              </svg>
-            </div>
-          </article>
-
-          <article class="card tall reveal">
-            <div class="hdr"><span class="badge">Automation</span><h3>Custom Tools & Cells</h3></div>
-            <p>Design of fixtures, motion components, safety layouts and cycle-time-oriented cells. Embedded controllers and custom software for reliable sequences.</p>
-            <div class="illus" aria-hidden="true">
-              <!-- cell illustration -->
-              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#grad2)" stroke-width="2.2">
-                <rect x="40" y="22" width="100" height="76" rx="10"/><rect x="190" y="22" width="130" height="76" rx="12"/>
-                <path d="M140 60h50"/></g>
-                <defs><linearGradient id="grad2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--q300)"/><stop offset="1" stop-color="var(--q700)"/></linearGradient></defs>
-              </svg>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="hdr"><span class="badge">IoT</span><h3>IoT Devices & Edge Apps</h3></div>
-            <p>Rugged device design, firmware and edge apps using microcontrollers and single-board computers. Local data logging and mobile/desktop UIs.</p>
-            <div class="illus" aria-hidden="true">
-              <!-- device nodes -->
-              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#grad3)" stroke-width="2.6">
-                <circle cx="60" cy="60" r="22"/><circle cx="180" cy="60" r="22"/><rect x="260" y="38" width="60" height="44" rx="8"/>
-                <path d="M82 60h76M202 60h58"/></g>
-                <defs><linearGradient id="grad3" x1="0" y1="0" x2="1" y2="1"><stop stop-color="var(--q400)"/><stop offset="1" stop-color="var(--q700)"/></linearGradient></defs>
-              </svg>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="hdr"><span class="badge">Tools</span><h3>Industrial Instruments</h3></div>
-            <p>Torque tools, inspection rigs, leak & dew-point testers, battery test setups and purpose-built shopfloor equipment.</p>
-            <div class="illus" aria-hidden="true">
-              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#grad2)" stroke-width="2.6">
-                <path d="M80 70l40-40 40 40-40 40-40-40z"/><circle cx="240" cy="60" r="34"/></g></svg>
-            </div>
-          </article>
-
-          <article class="card wide reveal">
-            <div class="hdr"><span class="badge">Consulting</span><h3>Digitalization Roadmaps</h3></div>
-            <p>Pragmatic paths from manual records to connected operations: traceability, quality data, and phased adoption with measurable ROI.</p>
-            <div class="illus" aria-hidden="true">
-              <svg viewBox="0 0 560 120"><g fill="none" stroke="url(#grad1)" stroke-width="2.4">
-                <rect x="14" y="16" width="130" height="88" rx="12"/><rect x="214" y="16" width="130" height="88" rx="12"/><rect x="414" y="16" width="130" height="88" rx="12"/>
-                <path d="M144 60h70M344 60h70"/></g></svg>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="robotics">
-      <div class="container">
-        <h2 class="h2">Robotics</h2>
-        <p class="sub">From desktop pick-and-place to heavy-payload arms — with custom end-effectors and vision assistance.</p>
-
-        <div class="grid robotics-grid">
-          <article class="card reveal">
-            <div class="hdr"><span class="badge">Robotic Arms</span><h3>Mini, Mid & Heavy-Duty</h3></div>
-            <p>Customizable DOF, reach, payload and accuracy. Options for micro-suction EOAT, force-torque sensing and vision-guided pick-place. Motion controlled by embedded/PC software — no PLC/HMI.</p>
-            <div class="illus" aria-hidden="true">
-              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#grad2)" stroke-width="3"><path d="M60 90h80l20-20 40-40 20 20-40 40h80"/></g></svg>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="hdr"><span class="badge">Automation Cells</span><h3>Vision & Sequencing</h3></div>
-            <p>Edge AI perception, safe motion envelopes and robust sequencing. Modular hands and quick-swap EOAT for fast changeovers — implemented without PLC/HMI stacks.</p>
-            <div class="illus" aria-hidden="true">
-              <svg viewBox="0 0 360 120"><g fill="none" stroke="url(#grad1)" stroke-width="2.6">
-                <rect x="120" y="26" width="120" height="68" rx="12"/><circle cx="180" cy="60" r="14"/><path d="M150 60h18M192 60h18"/></g></svg>
-            </div>
-          </article>
-
-          <article class="card reveal">
-            <div class="hdr"><span class="badge">EOAT</span><h3>End-of-Arm Tooling</h3></div>
-            <p>Soft grippers, electric grippers, micro-suction cups, screw-drivers and application tools — engineered for your arms and quick-swap adapters.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="solutions">
-      <div class="container">
-        <h2 class="h2">Technology Stack</h2>
-        <p class="sub">Tools we actively use today.</p>
-        <div class="grid stack">
-          <div class="card reveal" title="Embedded & Firmware">
-            <div class="hdr"><span class="material-symbols-rounded">memory_alt</span><h4>Embedded & Firmware</h4></div>
-            <p>C/C++ • MicroPython • FreeRTOS • ESP-IDF</p>
+      <section class="record" aria-label="Track record">
+        <div class="wrap record-grid">
+          <div data-reveal>
+            <strong>Musa CAD</strong>
+            <span>Our open-source CAD application, released for Windows and Linux</span>
           </div>
-          <div class="card reveal" title="Edge Computing">
-            <div class="hdr"><span class="material-symbols-rounded">developer_board</span><h4>Edge Computing</h4></div>
-            <p>Raspberry Pi/CM4 • ESP32 • Linux services</p>
+          <div data-reveal style="--d:1">
+            <strong>Government of Telangana</strong>
+            <span>Government projects, including Tour Diary and the Survey Dashboard</span>
           </div>
-          <div class="card reveal" title="Web & App UI">
-            <div class="hdr"><span class="material-symbols-rounded">smartphone</span><h4>Web & App UI</h4></div>
-            <p>React • Flutter • Material-3 design</p>
-          </div>
-          <div class="card reveal" title="Computer Vision & AI">
-            <div class="hdr"><span class="material-symbols-rounded">auto_awesome</span><h4>Computer Vision & AI</h4></div>
-            <p>OpenCV • ONNX • YOLO • TensorFlow Lite</p>
-          </div>
-          <div class="card reveal" title="Data (Local & Cloud-ready)">
-            <div class="hdr"><span class="material-symbols-rounded">data_object</span><h4>Data</h4></div>
-            <p>SQLite • DuckDB • Postgres (when needed)</p>
-          </div>
-          <div class="card reveal" title="CAD & Mechatronics">
-            <div class="hdr"><span class="material-symbols-rounded">precision_manufacturing</span><h4>CAD & Mechatronics</h4></div>
-            <p>Fusion 360 • SolidWorks • Rapid prototyping</p>
+          <div data-reveal style="--d:2">
+            <strong>Service To Mankind</strong>
+            <span>Technology partner for their website, donor tools and medical help services</span>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="cases">
-      <div class="container">
-        <h2 class="h2">Selected Work</h2>
-        <p class="sub">A glimpse of upgrades we have delivered recently.</p>
-        <div class="grid cases">
-          <article class="card case reveal">
-            <div>
-              <h3>Battery Manufacturing — OEE & Traceability</h3>
-              <p>Unified historian for furnaces, gloveboxes and assembly lines; SPC alerts dropped rework by <strong>22%</strong> within the first quarter.</p>
-              <a class="btn" href="#contact"><span class="material-symbols-rounded">call_made</span> Discuss similar</a>
-            </div>
-            <div class="shot"><img alt="Dashboard for battery manufacturing" src="https://images.unsplash.com/photo-1551281044-8b89a39f57b6?q=80&w=1200&auto=format&fit=crop"/></div>
-          </article>
-          <article class="card case reveal">
-            <div>
-              <h3>Utilities IoT — Energy & Air Quality</h3>
-              <p>Low-power devices for dew-point, leak detection, energy meters and compressors. Saved ~<strong>18%</strong> energy through demand-response.</p>
-              <a class="btn" href="#contact"><span class="material-symbols-rounded">call_made</span> Explore approach</a>
-            </div>
-            <div class="shot"><img alt="IoT devices for utilities and energy monitoring" src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1200&auto=format&fit=crop"/></div>
-          </article>
-        </div>
-      </div>
-    </section>
+      <section id="services" class="sec">
+        <div class="wrap">
+          <header class="head" data-reveal>
+            <p class="eyebrow">What we do</p>
+            <h2>Three disciplines. <span>One team.</span></h2>
+            <p>A product needs electronics, mechanics and software that agree with each other. We design all three.</p>
+          </header>
 
-    <section id="contact">
-      <div class="container">
-        <div class="cta-panel">
-          <div>
-            <h2 class="h2">Let’s upgrade your plant</h2>
-            <p class="sub">Tell us your bottleneck — we’ll propose a phased roadmap with clear ROI within 3–6 weeks.</p>
-            <ul class="muted" style="line-height:1.9;margin:0 0 10px 0;padding-left:18px">
-              <li>Discovery → Pilot → Scale plan</li>
-              <li>Edge-first or cloud-ready, your choice</li>
-              <li>Simple, maintainable engineering</li>
-            </ul>
+          <div class="svc-grid">
+            <article class="svc" data-reveal>
+              <svg class="svc-glyph" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="30" rx="3" /><path d="M13 39V27l6-6h12M35 9v10l-5 5H22" /><circle cx="13" cy="20" r="2.5" /><circle cx="35" cy="30" r="2.5" /></svg>
+              <h3>PCB design</h3>
+              <p class="svc-lede">Any board, from a small controller to a power stage.</p>
+              <ul>
+                <li>Inverters and power converters</li>
+                <li>Battery management systems (BMS)</li>
+                <li>Embedded control and communication boards</li>
+                <li>Sensor, IoT and instrumentation boards</li>
+                <li>Custom boards for your use case</li>
+              </ul>
+              <p class="svc-get"><b>You receive</b> schematic, PCB layout, BOM, Gerbers, drill and assembly files, and a 3D STEP model.</p>
+            </article>
+
+            <article class="svc" data-reveal style="--d:1">
+              <svg class="svc-glyph" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 42 15v18L24 43 6 33V15z" /><path d="M6 15l18 10 18-10M24 25v18" /></svg>
+              <h3>Enclosure and product design</h3>
+              <p class="svc-lede">The box around the board, and anything else that has to be made.</p>
+              <ul>
+                <li>Enclosure boxes for electronics</li>
+                <li>Sheet metal, die-cast and moulded parts</li>
+                <li>Mounting, heat sinking and sealing</li>
+                <li>Cable entries and wiring layouts</li>
+                <li>Custom design solutions of any kind</li>
+              </ul>
+              <p class="svc-get"><b>You receive</b> 3D CAD, 2D drawings, DXF flat patterns, BOM, exploded views and renders.</p>
+            </article>
+
+            <article class="svc" data-reveal style="--d:2">
+              <svg class="svc-glyph" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="8" width="38" height="32" rx="3" /><path d="M5 16h38M14 24l-5 5 5 5M34 24l5 5-5 5M27 23l-6 12" /></svg>
+              <h3>Software</h3>
+              <p class="svc-lede">The tools that people and machines actually use.</p>
+              <ul>
+                <li>Financial dashboards and tools</li>
+                <li>Web portals and admin consoles</li>
+                <li>Android and iOS apps</li>
+                <li>APIs and backends</li>
+                <li>Desktop engineering software</li>
+              </ul>
+              <p class="svc-get"><b>You receive</b> working software, source code, deployment and handover notes.</p>
+            </article>
           </div>
-          <form class="card" style="padding:18px" onsubmit="event.preventDefault(); alert('Thanks! We\'ll get back within 24 hours.'); this.reset();">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-              <input required name="name" placeholder="Name*" class="field" />
-              <input required type="email" name="email" placeholder="Email*" class="field"/>
-              <input name="company" placeholder="Company" class="field"/>
-              <select class="field"><option>Topic</option><option>Dashboards</option><option>Automation</option><option>IoT</option><option>Robotics</option><option>Consulting</option></select>
-              <textarea required class="field" style="grid-column:1/-1" rows="4" placeholder="What would you like to achieve?"></textarea>
+        </div>
+      </section>
+
+      <section id="board-to-box" class="sec sec-tight">
+        <div class="wrap">
+          <header class="head" data-reveal>
+            <p class="eyebrow">How we build</p>
+            <h2>From the first trace <span>to the closed box.</span></h2>
+            <p>The same team designs the board and the enclosure, so connectors, heat and mounting holes agree before anything is made. Scroll to watch one come together.</p>
+          </header>
+        </div>
+
+        <div class="stage" data-stage>
+          <div class="stage-sticky">
+            <div class="wrap stage-inner">
+              <ol class="stage-steps" data-steps>
+                <li class="is-on">
+                  <h3>Placement</h3>
+                  <p>Board outline, mounting holes and parts set around current paths, heat and connectors.</p>
+                </li>
+                <li>
+                  <h3>Power first</h3>
+                  <p>High-current paths stay short and wide, with clearance to suit the voltage on each net.</p>
+                </li>
+                <li>
+                  <h3>Signals</h3>
+                  <p>Gate drive, sensing and communication routed away from the switching noise.</p>
+                </li>
+                <li>
+                  <h3>Copper and vias</h3>
+                  <p>Ground pours, stitching vias and thermal vias under the parts that run hot.</p>
+                </li>
+                <li>
+                  <h3>Fabrication files</h3>
+                  <p>Each layer checked and released as the files your fabricator needs.</p>
+                </li>
+                <li>
+                  <h3>Into the enclosure</h3>
+                  <p>Bosses, gasket, cable entries and lid designed around the real board, not a guess.</p>
+                </li>
+              </ol>
+
+              <div class="vp crop stage-frame">
+                <div class="vp-bar">
+                  <span class="vp-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="vp-file">demo_board<i>.kicad_pcb</i></span>
+                  <span class="chip" data-stage-chip>PLACE</span>
+                </div>
+                <div class="stage-view">
+                  <div class="sheet-grid" aria-hidden="true"></div>
+                  <svg data-stage-svg viewBox="0 0 1000 680" role="img" aria-label="A demo circuit board is placed, routed and exploded into its layers, then closed inside an enclosure."></svg>
+                </div>
+                <div class="vp-cmd">
+                  <span><i>Command:</i> <b data-stage-cmd>PLACE</b></span>
+                  <span class="vp-note"><span data-stage-pct>0</span>% built</span>
+                </div>
+              </div>
             </div>
-            <div style="display:flex;gap:10px;margin-top:12px;align-items:center;justify-content:space-between">
-              <button class="btn primary" type="submit"><span class="material-symbols-rounded">send</span> Request proposal</button>
-              <span class="muted" style="font-size:.86rem">Or email: <a href="mailto:hello@weberq.global">hello@weberq.global</a></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" class="sec">
+        <div class="wrap">
+          <header class="head" data-reveal>
+            <p class="eyebrow">Selected work</p>
+            <h2>Released, delivered <span>and open to check.</span></h2>
+            <p>Real products and real clients. Where the work is public, the link is here.</p>
+          </header>
+
+          <article class="feat crop" data-reveal>
+            <a class="feat-shot" href="https://musacad.org" target="_blank" rel="noopener" aria-label="Open musacad.org">
+              <img class="shot-a" src="assets/work/musacad-flange.webp" width="1000" height="700" loading="lazy" alt="Musa CAD showing a dimensioned weld-neck flange drawing." />
+              <img class="shot-b" src="assets/work/musacad-plan.webp" width="1000" height="700" loading="lazy" alt="Musa CAD showing a ground floor plan of a house." />
+            </a>
+            <div class="feat-body">
+              <p class="tag">Own product &middot; Open source</p>
+              <h3>Musa CAD</h3>
+              <p>
+                Free, open-source 2D CAD for Windows and Linux, with a macOS preview. AutoCAD-style
+                commands, ribbon and shortcuts, DWG and DXF, built in C++23 on its own geometry
+                kernel and GPU viewport.
+              </p>
+              <dl class="facts">
+                <div><dt>1M</dt><dd>Primitives on screen</dd></div>
+                <div><dt>~32 ns</dt><dd>To insert one line</dd></div>
+              </dl>
+              <p class="links">
+                <a href="https://musacad.org" target="_blank" rel="noopener">musacad.org <span aria-hidden="true">&#8599;</span></a>
+                <a href="https://github.com/MusaCAD/MusaCAD" target="_blank" rel="noopener">GitHub <span aria-hidden="true">&#8599;</span></a>
+              </p>
+            </div>
+          </article>
+
+          <div class="work-grid">
+            <article class="card" data-reveal>
+              <p class="tag">Government</p>
+              <h3>Government of Telangana</h3>
+              <p>Among the government projects we have taken on:</p>
+              <ul class="items">
+                <li><b>Tour Diary.</b> Android app, web portal and admin console for the Nagarkurnool district administration. Officers record field visits with location and photos.</li>
+                <li><b>Survey Dashboard.</b> Data entry forms and searchable reporting for government surveys.</li>
+              </ul>
+              <p class="links">
+                <a href="https://github.com/Nagarkurnool-Administration/TourDairyApp" target="_blank" rel="noopener">Tour Diary app on GitHub <span aria-hidden="true">&#8599;</span></a>
+              </p>
+            </article>
+
+            <article class="card" data-reveal style="--d:1">
+              <p class="tag">Finance</p>
+              <h3>Financial dashboards and tools</h3>
+              <ul class="items">
+                <li><b>Cashi Flow.</b> Local-first money ledger for mobile. Turns bank notifications into transactions, keeps records encrypted on the phone and shows spending analytics.</li>
+                <li><b>Funds platform.</b> Mobile app, web dashboard and APIs with MPIN and biometric login, live balances, statements and approval workflows.</li>
+              </ul>
+              <p class="links">
+                <a href="externals/cashiflow/privacy-policy.html">Cashi Flow privacy policy</a>
+              </p>
+            </article>
+
+            <article class="card card-shot" data-reveal>
+              <a class="card-img" href="https://constitution.stmorg.in" target="_blank" rel="noopener" aria-label="Open the Service To Mankind constitution site">
+                <img src="assets/work/stm-constitution.webp" width="900" height="450" loading="lazy" alt="The constitution site of Service To Mankind, with a contents list and searchable articles." />
+              </a>
+              <div>
+                <p class="tag">Non-profit &middot; Technology partner</p>
+                <h3>Service To Mankind</h3>
+                <p>
+                  Technology partner to this Hyderabad student-run non-profit. We have built their
+                  website and donor tools, management console, APIs, #ASKSTM medical help, the Seetha
+                  WhatsApp assistant, medical camp management, and OpenCodeLaw, which publishes their
+                  constitution from version-controlled text.
+                </p>
+                <p class="links">
+                  <a href="https://stmorg.in" target="_blank" rel="noopener">stmorg.in <span aria-hidden="true">&#8599;</span></a>
+                  <a href="https://github.com/ServiceToMankind" target="_blank" rel="noopener">GitHub <span aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+
+            <article class="card card-shot" data-reveal style="--d:1">
+              <a class="card-img" href="https://sahasra-blowers.weberq.in/" target="_blank" rel="noopener" aria-label="Open the Sahasra Blowers website">
+                <img src="assets/work/sahasra.webp" width="900" height="450" loading="lazy" alt="The Sahasra Blowers website, showing a large fabricated centrifugal blower." />
+              </a>
+              <div>
+                <p class="tag">Client website</p>
+                <h3>Sahasra Blowers</h3>
+                <p>
+                  Website for an industrial blower and ventilation manufacturer in Jeedimetla,
+                  Hyderabad, built to load fast on slow connections.
+                </p>
+                <p class="links">
+                  <a href="https://sahasra-blowers.weberq.in/" target="_blank" rel="noopener">sahasra-blowers.weberq.in <span aria-hidden="true">&#8599;</span></a>
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <p class="also" data-reveal>
+            Also in the open:
+            <a href="https://github.com/weberq/taracore" target="_blank" rel="noopener">Tara Core</a>,
+            on-device LLM inference for Android.
+          </p>
+        </div>
+      </section>
+
+      <section id="scope" class="sec sec-panel">
+        <div class="wrap">
+          <header class="head" data-reveal>
+            <p class="eyebrow">Start here</p>
+            <h2>Pick the job. <span>See what it takes.</span></h2>
+            <p>What we need from you, and what you get back. Choose one and it becomes the start of your brief.</p>
+          </header>
+
+          <div class="scope" data-reveal>
+            <div class="scope-list" role="group" aria-label="Type of job" data-scope-list>
+              <button type="button" class="is-on" aria-pressed="true" data-job="inverter">Inverter PCB</button>
+              <button type="button" aria-pressed="false" data-job="bms">BMS PCB</button>
+              <button type="button" aria-pressed="false" data-job="control">Control or IoT board</button>
+              <button type="button" aria-pressed="false" data-job="enclosure">Enclosure</button>
+              <button type="button" aria-pressed="false" data-job="dashboard">Financial dashboard</button>
+              <button type="button" aria-pressed="false" data-job="app">Web or mobile app</button>
+            </div>
+            <div class="scope-term crop">
+              <div class="vp-bar">
+                <span class="vp-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="vp-file">scope<i>.txt</i></span>
+              </div>
+              <div class="scope-out" data-scope-out aria-live="polite">
+                <p class="scope-cmd"><i>$</i> scope inverter-pcb</p>
+                <p class="scope-label">We need</p>
+                <p>Input range, output power and voltage, grid-tied or off-grid, target standards, size limits.</p>
+                <p class="scope-label">You get</p>
+                <p>Schematic, PCB layout, design calculations, BOM, Gerbers, assembly drawings and a 3D STEP model.</p>
+              </div>
+              <div class="scope-foot">
+                <a class="btn btn-accent" href="#contact" data-scope-cta>Use this as my brief <span aria-hidden="true">&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+
+          <ol class="steps" data-reveal>
+            <li><b>Brief</b><span>You send the requirement. We ask about anything missing.</span></li>
+            <li><b>Scope</b><span>We reply with deliverables, timeline and price.</span></li>
+            <li><b>Design</b><span>You review at agreed checkpoints, with files you can open.</span></li>
+            <li><b>Handover</b><span>You receive the full file set, ready to fabricate or deploy.</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="contact" class="sec">
+        <div class="wrap contact">
+          <div data-reveal>
+            <p class="eyebrow">Contact</p>
+            <h2>Send us <span>the brief.</span></h2>
+            <p class="contact-lede">A rough sketch, a datasheet or a few lines is enough to start.</p>
+            <a class="contact-mail" href="mailto:samachar@weberq.in">samachar@weberq.in</a>
+            <dl class="legal">
+              <div><dt>Company</dt><dd>WeberQ Global Private Limited</dd></div>
+              <div><dt>Location</dt><dd>Hyderabad, Telangana, India</dd></div>
+              <div><dt>CIN</dt><dd>U62012TS2025PTC196050</dd></div>
+              <div><dt>GSTIN</dt><dd>36AAECW0738N1ZX</dd></div>
+            </dl>
+          </div>
+
+          <form class="brief crop" data-brief data-reveal style="--d:1" novalidate>
+            <div class="field-row">
+              <label><span>Name</span><input name="name" autocomplete="name" required /></label>
+              <label><span>Email</span><input type="email" name="email" autocomplete="email" required /></label>
+            </div>
+            <div class="field-row">
+              <label><span>Company <i>(optional)</i></span><input name="company" autocomplete="organization" /></label>
+              <label><span>Project type</span>
+                <select name="type" data-brief-type>
+                  <option>PCB design</option>
+                  <option>Enclosure or product design</option>
+                  <option>PCB and enclosure together</option>
+                  <option>Financial dashboard or tool</option>
+                  <option>Web or mobile app</option>
+                  <option>Something else</option>
+                </select>
+              </label>
+            </div>
+            <label><span>What are you building?</span><textarea name="message" rows="6" required data-brief-msg></textarea></label>
+            <p class="brief-error" data-brief-error role="alert" hidden></p>
+            <div class="brief-foot">
+              <button class="btn btn-accent btn-lg" type="submit">Send brief <span aria-hidden="true">&rarr;</span></button>
+              <p>Opens in your email app, addressed to us. Nothing is stored on this site.</p>
+            </div>
+            <div class="brief-done" data-brief-done role="status" hidden>
+              <p><b>Your email app should now be open with the brief filled in.</b> Press send there to reach us.</p>
+              <p class="brief-alt">
+                Nothing opened?
+                <a data-brief-gmail href="#" target="_blank" rel="noopener">Open in Gmail</a>
+                <button type="button" data-brief-copy>Copy the brief</button>
+              </p>
             </div>
           </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <footer>
-      <div class="container footgrid">
+    <footer class="foot">
+      <div class="wrap foot-grid">
         <div>
-          <div class="brand"><img src="assets/logo.png" alt="WeberQ logo small"/><div><div class="title">WeberQ</div><small>Global Private Limited</small></div></div>
-          <p class="muted">© <span id="y"></span> WeberQ Global Pvt Ltd. All rights reserved.</p>
+          <a class="brand brand-light" href="#top" aria-label="WeberQ home">
+            <img src="assets/icons/logo-96.png" alt="" width="36" height="36" />
+            <span>Weber<b>Q</b></span>
+          </a>
+          <p>PCB design, enclosure design and software engineering from Hyderabad, India.</p>
         </div>
         <div>
-          <h4>Company</h4>
-          <p class="muted"><a href="#services">Services</a><br><a href="#solutions">Technology</a><br><a href="#cases">Case Studies</a></p>
+          <h2>Services</h2>
+          <a href="#services">PCB design</a>
+          <a href="#services">Enclosure and product design</a>
+          <a href="#services">Software</a>
         </div>
         <div>
-          <h4>Connect</h4>
-          <p class="muted"><a href="https://weber.cottonseeds.org/">Legacy site</a><br><a href="mailto:samachar@weberq.in">samachar@weberq.in</a></p>
+          <h2>Work</h2>
+          <a href="https://musacad.org" target="_blank" rel="noopener">Musa CAD</a>
+          <a href="#work">Government of Telangana</a>
+          <a href="#work">Service To Mankind</a>
+          <a href="externals/cashiflow/privacy-policy.html">Cashi Flow privacy policy</a>
         </div>
+        <div>
+          <h2>Company</h2>
+          <a href="mailto:samachar@weberq.in">samachar@weberq.in</a>
+          <a href="https://github.com/weberq" target="_blank" rel="noopener">GitHub</a>
+          <a href="#contact">Start a project</a>
+        </div>
+      </div>
+      <div class="wrap foot-base">
+        <p>&copy; <span data-year>2026</span> WeberQ Global Private Limited. All rights reserved.</p>
+        <p>CIN U62012TS2025PTC196050 &middot; GSTIN 36AAECW0738N1ZX</p>
       </div>
     </footer>
 
-    <script>
-      // Year
-      (function(){ const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear(); })();
-
-      // Menu under sticky header
-      const nav=document.querySelector('.nav');
-      const btn=document.getElementById('menuBtn');
-      const sheet=document.getElementById('sheet');
-
-      function setNavH(){ const h=(nav&&nav.offsetHeight)||56; document.documentElement.style.setProperty('--navH', h+'px'); }
-      setNavH(); addEventListener('load',setNavH); addEventListener('resize',setNavH);
-
-      function closeSheet(){ sheet.classList.remove('open'); sheet.setAttribute('aria-hidden','true'); if(btn) btn.innerHTML='<span class="material-symbols-rounded">menu</span>'; document.body.style.overflow=''; }
-      function toggleSheet(){ const open=sheet.classList.toggle('open'); sheet.setAttribute('aria-hidden', String(!open)); if(btn) btn.innerHTML=`<span class="material-symbols-rounded">${open?'close':'menu'}</span>`; document.body.style.overflow=open?'hidden':''; }
-      btn?.addEventListener('click', toggleSheet);
-      sheet?.querySelectorAll('a').forEach(a=>a.addEventListener('click', closeSheet));
-      addEventListener('hashchange', closeSheet);
-      addEventListener('keydown', e=>{ if(e.key==='Escape') closeSheet(); });
-
-      // Scroll reveal (reduced motion aware)
-      (function(){
-        const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if(reduce) return;
-        const io=new IntersectionObserver((entries,obs)=>{
-          entries.forEach(e=>{
-            if(e.isIntersecting){
-              e.target.animate([{opacity:0, transform:'translateY(18px)'},{opacity:1, transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'});
-              obs.unobserve(e.target);
-            }
-          });
-        },{threshold:.2});
-        document.querySelectorAll('.reveal, .card, section .h2, section .sub, .hero .actions .btn').forEach(el=>io.observe(el));
-      })();
-
-      // Hero mesh bg
-      (function(){
-        const c=document.getElementById('mesh'); if(!c) return;
-        const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const ctx=c.getContext('2d'); let w=0,h=0; const DPR=Math.max(1,devicePixelRatio||1);
-        const N=36, nodes=Array.from({length:N}).map(()=>({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)/300,vy:(Math.random()-.5)/300}));
-        function resize(){ const r=c.getBoundingClientRect(); w=r.width; h=r.height; c.width=w*DPR; c.height=h*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
-        resize(); addEventListener('resize',resize);
-        function drawStatic(){
-          ctx.clearRect(0,0,w,h); ctx.fillStyle='rgba(12,30,60,.06)'; ctx.fillRect(0,0,w,h); ctx.strokeStyle='rgba(40,120,240,.15)';
-          for(let i=0;i<N;i++) for(let j=i+1;j<N;j++){ const a=nodes[i],b=nodes[j]; const dx=(a.x-b.x)*w, dy=(a.y-b.y)*h, d=Math.hypot(dx,dy); if(d<160){ ctx.beginPath(); ctx.moveTo(a.x*w,a.y*h); ctx.lineTo(b.x*w,b.y*h); ctx.stroke(); } }
-          nodes.forEach(n=>{ ctx.beginPath(); ctx.arc(n.x*w,n.y*h,2.2,0,Math.PI*2); ctx.fillStyle='rgba(20,110,240,.7)'; ctx.fill(); });
-        }
-        if(reduce){ drawStatic(); return; }
-        (function loop(){
-          ctx.clearRect(0,0,w,h); ctx.fillStyle='rgba(12,30,60,.06)'; ctx.fillRect(0,0,w,h);
-          for(const n of nodes){ n.x+=n.vx; n.y+=n.vy; if(n.x<0||n.x>1) n.vx*=-1; if(n.y<0||n.y>1) n.vy*=-1; }
-          for(let i=0;i<N;i++) for(let j=i+1;j<N;j++){ const a=nodes[i],b=nodes[j]; const dx=(a.x-b.x)*w, dy=(a.y-b.y)*h, d=Math.hypot(dx,dy); if(d<160){ ctx.strokeStyle=`rgba(40,120,240,${(1-d/160)*.18})`; ctx.beginPath(); ctx.moveTo(a.x*w,a.y*h); ctx.lineTo(b.x*w,b.y*h); ctx.stroke(); } }
-          for(const n of nodes){ ctx.beginPath(); ctx.arc(n.x*w,n.y*h,2.2,0,Math.PI*2); ctx.fillStyle='rgba(20,110,240,.7)'; ctx.fill(); }
-          requestAnimationFrame(loop);
-        })();
-      })();
-    </script>
+    <script src="assets/js/board.js" defer></script>
+    <script src="assets/js/site.js" defer></script>
   </body>
 </html>
