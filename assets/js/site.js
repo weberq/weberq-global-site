@@ -93,7 +93,7 @@
     const views = {
       board: { commands: ['PLACE', 'ROUTE', 'VIA', 'POUR', 'DRC'], note: '2 layers shown' },
       box: { commands: ['EXTRUDE', 'SHELL', 'FILLET', 'ASSEMBLE'], note: 'Drag to orbit' },
-      app: { commands: ['fetch', 'render', 'sync', 'deploy'], note: 'Sample data' },
+      app: { commands: ['INVOICE', 'POST', 'RECONCILE', 'REPORT'], note: 'Sample data' },
     };
     const tabMs = 9000;
     vp.style.setProperty('--tab-ms', tabMs + 'ms');
@@ -369,12 +369,12 @@
     const area = $('[data-dash-area]', vp);
     const tick = $('[data-dash-tick]', vp);
     const kpis = {
-      balance: $('[data-kpi="balance"]', vp),
-      in: $('[data-kpi="in"]', vp),
-      out: $('[data-kpi="out"]', vp),
+      sales: $('[data-kpi="sales"]', vp),
+      invoices: $('[data-kpi="invoices"]', vp),
+      due: $('[data-kpi="due"]', vp),
     };
-    const rupees = (v) => '₹' + Math.round(v).toLocaleString('en-IN');
-    const state = { balance: 482350, in: 126400, out: 74180 };
+    const rupees = (v) => '\u20B9' + Math.round(v).toLocaleString('en-IN');
+    const state = { sales: 842600, invoices: 126, due: 194300, next: 1043 };
     const seed = (i) => 95 + Math.sin(i * 0.5) * 22 + Math.sin(i * 0.17) * 18 - i * 0.7;
     const series = Array.from({ length: 44 }, (_, i) => seed(i));
     let n = series.length;
@@ -388,21 +388,30 @@
     }
     paint();
 
+    /* Sample ERP activity: invoices raised and payments collected. */
     if (!reduced) {
       setInterval(() => {
         if (document.hidden || $('[data-pane="app"]', vp).hidden) return;
-        const flow = Math.round(1200 + Math.random() * 6200);
-        const incoming = Math.random() > 0.4;
-        state[incoming ? 'in' : 'out'] += flow;
-        state.balance += incoming ? flow : -flow;
-        kpis.balance.textContent = rupees(state.balance);
-        kpis.in.textContent = rupees(state.in);
-        kpis.out.textContent = rupees(state.out);
+        const amount = Math.round((1800 + Math.random() * 16000) / 100) * 100;
+        const invoice = Math.random() > 0.38;
+        if (invoice) {
+          state.sales += amount;
+          state.invoices += 1;
+          state.due += amount;
+          tick.textContent = `Invoice INV-${state.next} raised, ${rupees(amount)}`;
+          state.next += 1;
+        } else {
+          const paid = Math.min(amount, state.due);
+          state.due -= paid;
+          tick.textContent = `Payment received, ${rupees(paid)}`;
+        }
+        kpis.sales.textContent = rupees(state.sales);
+        kpis.invoices.textContent = state.invoices.toLocaleString('en-IN');
+        kpis.due.textContent = rupees(state.due);
         n += 1;
         series.shift();
-        series.push(clamp(series[series.length - 1] + (incoming ? -1 : 1) * (flow / 700) + Math.sin(n) * 3, 16, 158));
+        series.push(clamp(series[series.length - 1] + (invoice ? -1 : 1) * (amount / 1400) + Math.sin(n) * 3, 16, 158));
         paint();
-        tick.textContent = incoming ? `+ ${rupees(flow)} received` : `- ${rupees(flow)} paid`;
       }, 1300);
     }
     return () => {};
@@ -663,41 +672,41 @@
 
   /* ---------- Scope console ---------- */
   const JOBS = {
-    inverter: {
-      slug: 'inverter-pcb',
+    custom: {
+      slug: 'custom-pcb',
       type: 'PCB design',
-      need: 'Input range, output power and voltage, grid-tied or off-grid, target standards, size limits.',
+      need: 'What the board must do, supply and power levels, inputs and outputs, interfaces, size and mounting limits, target standards.',
       get: 'Schematic, PCB layout, design calculations, BOM, Gerbers, assembly drawings and a 3D STEP model.',
     },
+    automation: {
+      slug: 'automation-or-iot-board',
+      type: 'PCB design',
+      need: 'The machine or process it controls, sensors and actuators, connectivity, processor preference, supply voltage, enclosure limits.',
+      get: 'Schematic, PCB layout, BOM, Gerbers, assembly drawings, a 3D STEP model and firmware if you need it.',
+    },
     bms: {
-      slug: 'bms-pcb',
+      slug: 'bms',
       type: 'PCB design',
       need: 'Cell chemistry, series and parallel count, pack current, balancing method, communication bus, safety targets.',
       get: 'Schematic, PCB layout, design calculations, BOM, Gerbers, assembly drawings and a 3D STEP model.',
     },
-    control: {
-      slug: 'control-board',
-      type: 'PCB design',
-      need: 'Processor preference, I/O list, sensors, communication, supply voltage, size and mounting limits.',
-      get: 'Schematic, PCB layout, BOM, Gerbers, assembly drawings and a 3D STEP model.',
+    mechanical: {
+      slug: 'enclosure-or-mechanism',
+      type: 'Mechanical design',
+      need: 'What it holds or moves, dimensions and loads, indoor or outdoor use, mounting, quantity and preferred manufacturing process.',
+      get: '3D CAD, 2D manufacturing drawings, DXF flat patterns, BOM, exploded views and renders.',
     },
-    enclosure: {
-      slug: 'enclosure',
-      type: 'Enclosure or product design',
-      need: 'Board or product dimensions, indoor or outdoor use, IP target, mounting, cable entries, quantity and preferred process.',
-      get: '3D CAD, 2D drawings, DXF flat patterns, BOM, exploded views and renders.',
+    erp: {
+      slug: 'erp',
+      type: 'ERP',
+      need: 'What you sell and bill, how accounts are kept today, branches and users, existing software and records to move.',
+      get: 'An ERP set up for how your organisation works, with your records moved in and your team trained.',
     },
-    dashboard: {
-      slug: 'financial-dashboard',
-      type: 'Financial dashboard or tool',
-      need: 'Data sources, who uses it, the numbers that matter, access rules and where it should run.',
-      get: 'Working dashboard, source code, deployment and handover notes.',
-    },
-    app: {
-      slug: 'web-or-mobile-app',
-      type: 'Web or mobile app',
-      need: 'What users must be able to do, platforms, integrations, login and payment needs, expected users.',
-      get: 'Android, iOS or web app, backend and APIs, source code and deployment.',
+    software: {
+      slug: 'software-or-app',
+      type: 'Software or app',
+      need: 'What users must be able to do, platforms, data sources, integrations, login and payment needs, expected users.',
+      get: 'Web, Android or iOS software, backend and APIs, source code and deployment.',
     },
   };
 
@@ -709,7 +718,7 @@
     const buttons = $$('button', list);
     const typeField = $('[data-brief-type]');
     const msgField = $('[data-brief-msg]');
-    let current = 'inverter';
+    let current = 'custom';
     let run = 0;
 
     function typeInto(node, value, id) {
@@ -768,28 +777,35 @@
       typeField.value = job.type;
       if (!msgField.value.trim()) {
         msgField.value = `Project: ${label}\n\nDetails we have so far:\n`
-          + job.need.replace(/\.$/, '').split(', ').map((item) => `- ${item}: `).join('\n');
+          + job.need.replace(/\.$/, '').split(', ')
+            .map((item) => `- ${item.charAt(0).toUpperCase()}${item.slice(1)}: `).join('\n');
       }
       setTimeout(() => $('input[name="name"]').focus({ preventScroll: true }), 650);
     });
   }
 
-  /* ---------- Brief form. GitHub Pages has no backend, so the visitor's own
-     email app sends it. The fallbacks cover machines with no mail client. ---------- */
+  /* ---------- Brief form. GitHub Pages has no backend, so FormSubmit relays
+     the brief to our inbox. If that fails, or the relay is not activated yet,
+     the visitor gets the same brief ready to send by email. ---------- */
   function initBrief() {
     const form = $('[data-brief]');
     if (!form) return;
     const TO = 'samachar@weberq.in';
+    const ENDPOINT = `https://formsubmit.co/ajax/${TO}`;
     const error = $('[data-brief-error]', form);
-    const done = $('[data-brief-done]', form);
+    const sent = $('[data-brief-sent]', form);
+    const fallback = $('[data-brief-fallback]', form);
+    const send = $('[data-brief-send]', form);
+    const mailto = $('[data-brief-mailto]', form);
     const gmail = $('[data-brief-gmail]', form);
     const copy = $('[data-brief-copy]', form);
+    const sendLabel = send.innerHTML;
     const required = ['name', 'email', 'message'];
     let lastBody = '';
 
     form.addEventListener('input', (e) => e.target.removeAttribute('aria-invalid'));
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(form);
       const value = (k) => String(data.get(k) || '').trim();
@@ -806,23 +822,49 @@
         return;
       }
       error.hidden = true;
+      sent.hidden = true;
+      fallback.hidden = true;
 
       const company = value('company');
       const subject = `Project brief: ${value('type')}${company ? ` (${company})` : ''}`;
-      lastBody = [
-        value('message'),
-        '',
-        '--',
-        value('name'),
-        company,
-        value('email'),
-      ].filter((line, i) => line || i < 3).join('\n');
+      lastBody = [value('message'), '', '--', value('name'), company, value('email')]
+        .filter((line, i) => line || i < 3).join('\n');
 
-      const query = `subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lastBody)}`;
-      gmail.href = `https://mail.google.com/mail/?view=cm&to=${TO}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(lastBody)}`;
-      done.hidden = false;
-      copy.textContent = 'Copy the brief';
-      location.href = `mailto:${TO}?${query}`;
+      send.disabled = true;
+      send.textContent = 'Sending...';
+      try {
+        const payload = {
+          name: value('name'),
+          email: value('email'),
+          project_type: value('type'),
+          message: value('message'),
+          _subject: subject,
+          _replyto: value('email'),
+          _template: 'table',
+          _honey: value('_honey'),
+        };
+        if (company) payload.company = company;
+        const res = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const reply = await res.json().catch(() => ({}));
+        if (!res.ok || String(reply.success) !== 'true' || /activat/i.test(reply.message || '')) {
+          throw new Error(reply.message || `HTTP ${res.status}`);
+        }
+        sent.hidden = false;
+        form.reset();
+      } catch (err) {
+        const query = `subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lastBody)}`;
+        mailto.href = `mailto:${TO}?${query}`;
+        gmail.href = `https://mail.google.com/mail/?view=cm&to=${TO}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(lastBody)}`;
+        copy.textContent = 'Copy the brief';
+        fallback.hidden = false;
+      } finally {
+        send.disabled = false;
+        send.innerHTML = sendLabel;
+      }
     });
 
     copy.addEventListener('click', async () => {

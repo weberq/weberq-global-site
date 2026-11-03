@@ -3,7 +3,7 @@
 ![WeberQ logo](assets/icons/logo-96.png)
 
 The site at [weberq.in](https://weberq.in) for **WeberQ Global Private Limited**, Hyderabad:
-PCB design, enclosure and product design, and software.
+PCB design, mechanical design, software and ERP.
 
 It is plain HTML, CSS and JavaScript with no dependencies and no build step. GitHub Pages
 serves it from the root of `main`.
@@ -39,8 +39,10 @@ python3 -m http.server 8080
   permission. The board in the hero and the scroll sequence is artwork made for this site.
 - **The demo board is laid out by PCB rules.** If you change `assets/js/board.js`, tracks of
   different nets must not touch on the same layer.
-- **The brief form has no backend.** GitHub Pages cannot receive a form, so the form opens the
-  visitor's email app, addressed to `samachar@weberq.in`, with Gmail and copy fallbacks.
+- **The brief form posts to FormSubmit.** GitHub Pages cannot receive a form, so
+  [FormSubmit](https://formsubmit.co) relays each brief to `samachar@weberq.in`. FormSubmit
+  sends an activation email after the first submission, and nothing is delivered until
+  someone clicks it. If a send fails, the visitor gets the brief ready to send by email instead.
 - **Motion is optional.** With reduced motion, or on a screen too short to pin, the
   board-to-box sequence becomes a plain list beside the finished box.
 

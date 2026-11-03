@@ -1,6 +1,6 @@
 /* WeberQ demo board.
  *
- * An illustrative power + control PCB, described as data and drawn as SVG. It is
+ * An illustrative power and control PCB, described as data and drawn as SVG. It is
  * artwork for this site, not a client design and not a circuit anyone should
  * build. It is still laid out by PCB rules, so an engineer looking closely sees
  * no shorted nets: F.Cu and B.Cu tracks only cross on different layers.
@@ -93,7 +93,7 @@
   /* ---------- Power stage ---------- */
   tht('DCP', 32, 70, 11, true);
   tht('GND', 32, 186, 11);
-  part('J1', 'DC input terminal', 32, 128, [
+  part('J1', 'Power input terminal', 32, 128, [
     ['rect', 12, 46, 40, 164],
     ['refAt', 32, 131],
   ]);
@@ -147,7 +147,7 @@
 
   tht('OUTA', 566, 106, 7);
   tht('OUTB', 566, 154, 7);
-  part('C5', 'Output film capacitor', 566, 130, [
+  part('C5', 'Output capacitor', 566, 130, [
     ['rect', 550, 98, 32, 64],
     ['refAt', 566, 133],
   ]);
@@ -166,7 +166,7 @@
 
   tht('OUTA', 612, 90, 11);
   tht('OUTC', 612, 170, 11);
-  part('J2', 'AC output terminal', 612, 130, [
+  part('J2', 'Output terminal', 612, 130, [
     ['rect', 592, 66, 40, 128],
   ]);
 
@@ -400,8 +400,8 @@
   }
 
   const silkText = [
-    [32, 37, 'DC IN', 'middle'],
-    [612, 58, 'AC OUT', 'middle'],
+    [32, 37, 'PWR IN', 'middle'],
+    [612, 58, 'OUTPUT', 'middle'],
     [612, 312, 'CAN', 'middle'],
     [34, 282, 'I/O', 'middle'],
     [300, 404, 'GPIO', 'middle'],
