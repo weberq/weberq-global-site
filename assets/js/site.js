@@ -791,7 +791,59 @@
     const form = $('[data-brief]');
     if (!form) return;
     const TO = 'samachar@weberq.in';
-    const ENDPOINT = `https://formsubmit.co/ajax/${TO}`;
+    // Public access key from web3forms.com (it only lets the form email TO).
+    const WEB3FORMS_KEY = 'a72a3e46-831b-4b14-81e0-f3ba7d2262b4';
+    // Tried in order until one delivers; if none does, the brief is handed
+    // back to the visitor to send by email.
+    const RELAYS = [
+      WEB3FORMS_KEY && {
+        url: 'https://api.web3forms.com/submit',
+        body: (b) => ({
+          access_key: WEB3FORMS_KEY,
+          subject: b.subject,
+          from_name: 'weberq.in',
+          name: b.name,
+          email: b.email,
+          ...(b.company && { company: b.company }),
+          project_type: b.type,
+          message: b.message,
+        }),
+      },
+      {
+        url: `https://formsubmit.co/ajax/${TO}`,
+        body: (b) => ({
+          name: b.name,
+          email: b.email,
+          ...(b.company && { company: b.company }),
+          project_type: b.type,
+          message: b.message,
+          _subject: b.subject,
+          _replyto: b.email,
+          _template: 'table',
+        }),
+      },
+    ].filter(Boolean);
+    const TIMEOUT = 10000;
+
+    async function relay(r, brief) {
+      const ctrl = new AbortController();
+      const timer = setTimeout(() => ctrl.abort(), TIMEOUT);
+      try {
+        const res = await fetch(r.url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(r.body(brief)),
+          signal: ctrl.signal,
+        });
+        const reply = await res.json().catch(() => ({}));
+        if (!res.ok || String(reply.success) !== 'true' || /activat/i.test(reply.message || '')) {
+          throw new Error(reply.message || `HTTP ${res.status}`);
+        }
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
     const error = $('[data-brief-error]', form);
     const sent = $('[data-brief-sent]', form);
     const fallback = $('[data-brief-fallback]', form);
@@ -830,32 +882,32 @@
       lastBody = [value('message'), '', '--', value('name'), company, value('email')]
         .filter((line, i) => line || i < 3).join('\n');
 
+      // A filled honeypot means a bot: look done, send nothing.
+      if (value('_honey')) {
+        sent.hidden = false;
+        form.reset();
+        return;
+      }
+
+      const brief = {
+        name: value('name'), email: value('email'), company,
+        type: value('type'), message: value('message'), subject,
+      };
       send.disabled = true;
       send.textContent = 'Sending...';
       try {
-        const payload = {
-          name: value('name'),
-          email: value('email'),
-          project_type: value('type'),
-          message: value('message'),
-          _subject: subject,
-          _replyto: value('email'),
-          _template: 'table',
-          _honey: value('_honey'),
-        };
-        if (company) payload.company = company;
-        const res = await fetch(ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-          body: JSON.stringify(payload),
-        });
-        const reply = await res.json().catch(() => ({}));
-        if (!res.ok || String(reply.success) !== 'true' || /activat/i.test(reply.message || '')) {
-          throw new Error(reply.message || `HTTP ${res.status}`);
+        let delivered = false;
+        for (const r of RELAYS) {
+          try {
+            await relay(r, brief);
+            delivered = true;
+            break;
+          } catch { /* try the next relay */ }
         }
+        if (!delivered) throw new Error('no relay delivered');
         sent.hidden = false;
         form.reset();
-      } catch (err) {
+      } catch {
         const query = `subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lastBody)}`;
         mailto.href = `mailto:${TO}?${query}`;
         gmail.href = `https://mail.google.com/mail/?view=cm&to=${TO}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(lastBody)}`;

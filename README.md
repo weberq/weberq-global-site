@@ -39,10 +39,12 @@ python3 -m http.server 8080
   permission. The board in the hero and the scroll sequence is artwork made for this site.
 - **The demo board is laid out by PCB rules.** If you change `assets/js/board.js`, tracks of
   different nets must not touch on the same layer.
-- **The brief form posts to FormSubmit.** GitHub Pages cannot receive a form, so
-  [FormSubmit](https://formsubmit.co) relays each brief to `samachar@weberq.in`. FormSubmit
-  sends an activation email after the first submission, and nothing is delivered until
-  someone clicks it. If a send fails, the visitor gets the brief ready to send by email instead.
+- **The brief form goes through email relays.** GitHub Pages cannot receive a form, so
+  `initBrief` in `assets/js/site.js` tries two relays to `samachar@weberq.in` in order:
+  [Web3Forms](https://web3forms.com) when `WEB3FORMS_KEY` is set, then
+  [FormSubmit](https://formsubmit.co), which delivers only after its one-time activation
+  email has been clicked. Each relay gets 10 seconds. If neither delivers, the visitor gets
+  the brief ready to send by email instead.
 - **Motion is optional.** With reduced motion, or on a screen too short to pin, the
   board-to-box sequence becomes a plain list beside the finished box.
 
